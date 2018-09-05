@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:tools="http://schemas.android.com/tools"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	android:gravity="center"
+	android:orientation="vertical"
+	tools:context="com.waltzapp.android.waltzsdk.MainActivity"
+	>
+	
+	<Button
+		android:id="@+id/main_login"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:layout_marginBottom="8dp"
+		android:layout_marginEnd="64dp"
+		android:layout_marginStart="64dp"
+		android:layout_marginTop="8dp"
+		android:text="@string/login"
+		/>
+	
+	<Button
+		android:id="@+id/main_clear"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:layout_marginBottom="8dp"
+		android:layout_marginEnd="64dp"
+		android:layout_marginStart="64dp"
+		android:layout_marginTop="8dp"
+		android:text="@string/clear_data"
+		/>
+	
+	<Button
+		android:id="@+id/main_camera_permission"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:layout_marginBottom="8dp"
+		android:layout_marginEnd="64dp"
+		android:layout_marginStart="64dp"
+		android:layout_marginTop="8dp"
+		android:text="@string/grant_camera_permission"
+		/>
+
+</LinearLayout>
