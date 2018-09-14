@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "C9326D92667F93E9E95D40A3650DB157"
-               BuildableName = "Freddy.framework"
-               BlueprintName = "Freddy"
+               BlueprintIdentifier = "61A4D476B51458C5E99F4B864FDDE319"
+               BuildableName = "WaltzAccess"
+               BlueprintName = "WaltzAccess"
                ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -45,9 +45,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "C9326D92667F93E9E95D40A3650DB157"
-            BuildableName = "Freddy.framework"
-            BlueprintName = "Freddy"
+            BlueprintIdentifier = "61A4D476B51458C5E99F4B864FDDE319"
+            BuildableName = "WaltzAccess"
+            BlueprintName = "WaltzAccess"
             ReferencedContainer = "container:Pods.xcodeproj">
          </BuildableReference>
       </MacroExpansion>

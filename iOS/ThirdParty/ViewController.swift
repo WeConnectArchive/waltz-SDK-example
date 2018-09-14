@@ -9,7 +9,7 @@
 import AVFoundation
 import WaltzAccess
 
-class ViewController: UIViewController, WltzTransactionMgrDelegate {
+class ViewController: UIViewController, WltzSDKMgrDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -18,6 +18,8 @@ class ViewController: UIViewController, WltzTransactionMgrDelegate {
          Could be done in the SDK too. Following in the foot steps of on this one.
          */
         requestCameraPermission()
+        PermissionsChecker.sharedInstance.requestPermissionForNotifications()
+        PermissionsChecker.sharedInstance.requestLocationPermission()
     }
     
     @IBAction func startTransaction(_ sender: UIButton) {
@@ -25,11 +27,24 @@ class ViewController: UIViewController, WltzTransactionMgrDelegate {
          The SDK needs a valid key to start the transaction.
          Please contact the Waltz team to have one.
          */
-        WaltzTransactionMgr.sharedManager.beginTransaction(withLicenseKey: "PUT---YOUR---iOS---LICENSE---HERE")
-        WaltzTransactionMgr.sharedManager.delegate = self
+        WaltzSDKMgr.sharedManager.beginTransaction(withLicenseKey: "PUT---YOUR---iOS---LICENSE---HERE")
+        WaltzSDKMgr.sharedManager.delegate = self
     }
     
-    func didFinishWaltzTransactionWithErrorCode(_ errorCode: WltzTransactionResponseCodes) {
+    @IBAction func startGeofence(_ sender: UIButton) {
+        UIApplication.shared.registerForRemoteNotifications()
+        WaltzSDKMgr.sharedManager.startGeofenceService()
+    }
+    
+    @IBAction func stopGeofence(_ sender: UIButton) {
+        WaltzSDKMgr.sharedManager.stopGeofenceService()
+    }
+    
+    func didFinishWaltzTransactionWithErrorCode(_ errorCode: WltzSDKResponseCodes) {
+        print("The application quit with error code \(errorCode)")
+    }
+    
+    func didFinishWaltzGeofenceSetupWithErrorCode(_ errorCode: WltzSDKResponseCodes) {
         print("The application quit with error code \(errorCode)")
     }
     
@@ -37,7 +52,7 @@ class ViewController: UIViewController, WltzTransactionMgrDelegate {
         if AVCaptureDevice.responds(to: #selector(AVCaptureDevice.requestAccess(for:completionHandler:))) {
             AVCaptureDevice.requestAccess(for: .video, completionHandler: { granted in
                 if granted {
-                    
+                    PermissionsChecker.sharedInstance.cameraPermissionsHaveBeenGranted()
                 } else {
                     
                 }

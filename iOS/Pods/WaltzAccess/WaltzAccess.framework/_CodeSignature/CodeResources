@@ -6,23 +6,23 @@
 	<dict>
 		<key>Assets.car</key>
 		<data>
-		W/j732QX6loOak6fC/A58Jy9IZs=
+		yTJA/PQC//d5t8nHm3jxeHgo9OM=
 		</data>
 		<key>Frameworks/PBC.framework/Info.plist</key>
 		<data>
-		jOnxFdEsrUlhAhW7DhtMchgW9Dg=
+		/zcn5nhWAaEf/iETgwOK8Ak0M6M=
 		</data>
 		<key>Frameworks/PBC.framework/PBC</key>
 		<data>
-		FvyY0WbtzetXeRoqzjy9+kfNRwY=
+		TdjRLewTt2vKLmnaQul7plrxXSs=
 		</data>
 		<key>Frameworks/PBC.framework/_CodeSignature/CodeResources</key>
 		<data>
-		oL+vHm5Ji0plPGZ9g3jEZbp6VAY=
+		S09c/bJXgK/YXo28OEM4vbubhUo=
 		</data>
 		<key>Frameworks/WaltzTransaction.framework/Info.plist</key>
 		<data>
-		iTX79tdfszGNL2q+fo5+y4zlctQ=
+		IeZUphrHPvP/3XbJa3+ZWDPmT+8=
 		</data>
 		<key>Frameworks/WaltzTransaction.framework/Podfile</key>
 		<data>
@@ -30,17 +30,17 @@
 		</data>
 		<key>Frameworks/WaltzTransaction.framework/WaltzTransaction</key>
 		<data>
-		tEDlQ6Rn403lib3OPcep1XXBVag=
+		yR3sjoD9K+MT+gYaeOWIoBcDR2U=
 		</data>
 		<key>Frameworks/WaltzTransaction.framework/_CodeSignature/CodeResources</key>
 		<data>
-		ATrOnlp6W1Vwu+nDpCyXHOCIoA8=
+		K+ILY7pGzqX0HhXqEyM0/Eonk0s=
 		</data>
 		<key>Frameworks/WaltzTransaction.framework/en.lproj/Localizable.strings</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			pSIC+IbrIn3n/h9aNKxGDU4kP0w=
+			edkEih1wyornWr3FmufwtMIX4ik=
 			</data>
 			<key>optional</key>
 			<true/>
@@ -49,7 +49,7 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			pSIC+IbrIn3n/h9aNKxGDU4kP0w=
+			edkEih1wyornWr3FmufwtMIX4ik=
 			</data>
 			<key>optional</key>
 			<true/>
@@ -58,18 +58,14 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			pSIC+IbrIn3n/h9aNKxGDU4kP0w=
+			edkEih1wyornWr3FmufwtMIX4ik=
 			</data>
 			<key>optional</key>
 			<true/>
 		</dict>
 		<key>Headers/Constants.h</key>
 		<data>
-		zFHhjEa/yc63cjl3a+pzLMeXfLg=
-		</data>
-		<key>Headers/PermissionsChecker.h</key>
-		<data>
-		3uFCk40UNtqDMZtbcfKlt6dvi8Y=
+		ki+dwzYrtXO1xwTKQVgGMZOjooU=
 		</data>
 		<key>Headers/Versions.h</key>
 		<data>
@@ -77,39 +73,39 @@
 		</data>
 		<key>Headers/VersionsHelper.h</key>
 		<data>
-		ltsCgTA3/C5cvkbW1uBcJzk3Atk=
+		EKL1BiS+fdRBtoTuGm2v3MWrfIU=
 		</data>
 		<key>Headers/WaltzAccess-Swift.h</key>
 		<data>
-		IHfgLItYp03F36FTaLGbVVmSipc=
+		tE2FrqPmHbIKPY4NpJAMUCIsGNE=
 		</data>
 		<key>Headers/WaltzAccess.h</key>
 		<data>
-		WIGmz+228CWXFa+f2X4WaQMwCaE=
+		fGdhcJO0iFY8SBX8ixNPqK9KtcA=
 		</data>
 		<key>Headers/WltzResponseConstants.h</key>
 		<data>
-		CCC9BFJme5n1VtBhM9hTvzVJzE0=
+		W4xlQfgqGu8WCfl647bxo8w4jrk=
 		</data>
 		<key>Info.plist</key>
 		<data>
-		oB7Cmh/2CxNyOQm1Oo3CsADjC4o=
+		RlIEN9I6mE2gyvTFpyiAjVsRqKk=
 		</data>
 		<key>Modules/WaltzAccess.swiftmodule/arm.swiftdoc</key>
 		<data>
-		lb4RYAChfZ8t4B51ghjaqK2Dg6w=
+		wYi9lhWogE9lMtSZ9mPoYtedca8=
 		</data>
 		<key>Modules/WaltzAccess.swiftmodule/arm.swiftmodule</key>
 		<data>
-		rPnO9e0+RNwtxSvMhUYEd817mdA=
+		H/+/LOtcAJgcxWiub5G1gRJV9Zw=
 		</data>
 		<key>Modules/WaltzAccess.swiftmodule/arm64.swiftdoc</key>
 		<data>
-		vwvMxTtAOdozvsuDjKk0gXlyh64=
+		ds5A8X2BwLqne//V4Kh6qGY0CgI=
 		</data>
 		<key>Modules/WaltzAccess.swiftmodule/arm64.swiftmodule</key>
 		<data>
-		WAsKNmeNYCrbBXSQvHfjGFTckmc=
+		2Q0WvCzxkKB7H/IYcS0Z2Xq1SAg=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -121,35 +117,35 @@
 		</data>
 		<key>WltzSDKStoryboard.storyboardc/JnF-TB-6K5-view-Ufx-TH-coM.nib/objects-11.0+.nib</key>
 		<data>
-		jHgThmuclhSEyCfwqZXViSVzetI=
+		z+LFucdtfeCIZSAM3jT+UXY6qdw=
 		</data>
 		<key>WltzSDKStoryboard.storyboardc/JnF-TB-6K5-view-Ufx-TH-coM.nib/runtime.nib</key>
 		<data>
-		ayci+OP4ZJ2GoGRNPFyjZqRsCeM=
+		8F6Nt1fHSdxY87OqAybiPvEsYRY=
 		</data>
 		<key>WltzSDKStoryboard.storyboardc/LoginViewControllerID.nib/objects-11.0+.nib</key>
 		<data>
-		iOTtmYIr5n4j2xl14XTL3GktzrM=
+		4orfCFZ4np+vx0kqNNmd6ABb4J0=
 		</data>
 		<key>WltzSDKStoryboard.storyboardc/LoginViewControllerID.nib/runtime.nib</key>
 		<data>
-		KIAmydrF5ecA7qz18NsNdpY4/zo=
+		wgWWYTslRM2NmBFoCcRJs9rOKzY=
 		</data>
 		<key>WltzSDKStoryboard.storyboardc/QRPageViewControllerID.nib/objects-11.0+.nib</key>
 		<data>
-		0K8KWQ70hlkUev+a9qEMl2kfoIY=
+		kpskon0z5nUe6f5G4BR/Lf9OnsU=
 		</data>
 		<key>WltzSDKStoryboard.storyboardc/QRPageViewControllerID.nib/runtime.nib</key>
 		<data>
-		eMFm7PYpx+lcmFd8zw7u6OeTt8M=
+		/nM85lye425KnDmPkv+Di+CJ+Hs=
 		</data>
 		<key>WltzSDKStoryboard.storyboardc/py2-8z-WNI-view-kQV-MT-HHr.nib/objects-11.0+.nib</key>
 		<data>
-		xSebJQm8QwALfuDs50xhgq8ZOvk=
+		KiRa9wJQo4fXe65kwsQDqBpAf/c=
 		</data>
 		<key>WltzSDKStoryboard.storyboardc/py2-8z-WNI-view-kQV-MT-HHr.nib/runtime.nib</key>
 		<data>
-		iF1JfWhp9vJq+17I/5pYalU7Pzk=
+		7QO1cKSIA1aataFj8LFcrVbgb7c=
 		</data>
 		<key>en.lproj/Localizable.strings</key>
 		<dict>
@@ -185,55 +181,55 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			W/j732QX6loOak6fC/A58Jy9IZs=
+			yTJA/PQC//d5t8nHm3jxeHgo9OM=
 			</data>
 			<key>hash2</key>
 			<data>
-			o8qEInIUrU17xcjzYju66LOjsxVTGUq5SgwsD7JiAsU=
+			57+YvMIAz9tlAIoeNaU91ptmf1OvXg/dCKLJtBrqDxg=
 			</data>
 		</dict>
 		<key>Frameworks/PBC.framework/Info.plist</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			jOnxFdEsrUlhAhW7DhtMchgW9Dg=
+			/zcn5nhWAaEf/iETgwOK8Ak0M6M=
 			</data>
 			<key>hash2</key>
 			<data>
-			xobg/SHMvprorozNXS5qUpc5SN3CoJEsPtmtdnGIyF0=
+			LqkuDE7k4/N8EXrOMwdPPXFZLg6ed0gQsvRJiZGKjVw=
 			</data>
 		</dict>
 		<key>Frameworks/PBC.framework/PBC</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			FvyY0WbtzetXeRoqzjy9+kfNRwY=
+			TdjRLewTt2vKLmnaQul7plrxXSs=
 			</data>
 			<key>hash2</key>
 			<data>
-			uOczzUcxYg/SYpAJsczz9tEUzXAMhXk48VDBHcmcuEA=
+			dQTV4l+1OfKo/rjBy7yD72bwWdcBmwz4XUUNUeikTaQ=
 			</data>
 		</dict>
 		<key>Frameworks/PBC.framework/_CodeSignature/CodeResources</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			oL+vHm5Ji0plPGZ9g3jEZbp6VAY=
+			S09c/bJXgK/YXo28OEM4vbubhUo=
 			</data>
 			<key>hash2</key>
 			<data>
-			qcvm09DwV87e9h1IoIIvLqz1MEUiLMC00mWsHZs80I4=
+			Qixx/WbmXjdxRfFVWMO1ycWLWbkRhr1W1TPymMwcqXY=
 			</data>
 		</dict>
 		<key>Frameworks/WaltzTransaction.framework/Info.plist</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			iTX79tdfszGNL2q+fo5+y4zlctQ=
+			IeZUphrHPvP/3XbJa3+ZWDPmT+8=
 			</data>
 			<key>hash2</key>
 			<data>
-			bE+sqo35Ai0xZGSPCcHExb3Bp4s5tLqNNH4WWQjSSnw=
+			oL5tXHwep7XYCwLYpCcMpZV+KeDQOHcA1o9WvSEjpls=
 			</data>
 		</dict>
 		<key>Frameworks/WaltzTransaction.framework/Podfile</key>
@@ -251,33 +247,33 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			tEDlQ6Rn403lib3OPcep1XXBVag=
+			yR3sjoD9K+MT+gYaeOWIoBcDR2U=
 			</data>
 			<key>hash2</key>
 			<data>
-			LKoscu1XuGIx2Wsf5oP+PsNMLFJ1nQAqlnxMKXEoE5I=
+			ZtQ9C90m1yLvBxWDWfpr5nBx1tK1opvo+zhLebnhmbQ=
 			</data>
 		</dict>
 		<key>Frameworks/WaltzTransaction.framework/_CodeSignature/CodeResources</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			ATrOnlp6W1Vwu+nDpCyXHOCIoA8=
+			K+ILY7pGzqX0HhXqEyM0/Eonk0s=
 			</data>
 			<key>hash2</key>
 			<data>
-			3cEJ4Eeiip0su1mhmLTfQsJKC42dV4u8L81+p23oWTQ=
+			QYAQwGBA+TfDZ+Hcx8RpKH6rJYOXfmYgvaJasKjZIMA=
 			</data>
 		</dict>
 		<key>Frameworks/WaltzTransaction.framework/en.lproj/Localizable.strings</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			pSIC+IbrIn3n/h9aNKxGDU4kP0w=
+			edkEih1wyornWr3FmufwtMIX4ik=
 			</data>
 			<key>hash2</key>
 			<data>
-			WQ1e1r/jiOBhn9xORFpiJcjj7hWC/M/rfdyvY+GSb1A=
+			wl0EY/rjFQt1/AheNBuyT+0E8SCAHI1hKm/fHJ0eTi4=
 			</data>
 			<key>optional</key>
 			<true/>
@@ -286,11 +282,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			pSIC+IbrIn3n/h9aNKxGDU4kP0w=
+			edkEih1wyornWr3FmufwtMIX4ik=
 			</data>
 			<key>hash2</key>
 			<data>
-			WQ1e1r/jiOBhn9xORFpiJcjj7hWC/M/rfdyvY+GSb1A=
+			wl0EY/rjFQt1/AheNBuyT+0E8SCAHI1hKm/fHJ0eTi4=
 			</data>
 			<key>optional</key>
 			<true/>
@@ -299,11 +295,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			pSIC+IbrIn3n/h9aNKxGDU4kP0w=
+			edkEih1wyornWr3FmufwtMIX4ik=
 			</data>
 			<key>hash2</key>
 			<data>
-			WQ1e1r/jiOBhn9xORFpiJcjj7hWC/M/rfdyvY+GSb1A=
+			wl0EY/rjFQt1/AheNBuyT+0E8SCAHI1hKm/fHJ0eTi4=
 			</data>
 			<key>optional</key>
 			<true/>
@@ -312,22 +308,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			zFHhjEa/yc63cjl3a+pzLMeXfLg=
+			ki+dwzYrtXO1xwTKQVgGMZOjooU=
 			</data>
 			<key>hash2</key>
 			<data>
-			1tpU9a8YI44kLc7d976Y0l7E6c93D69pC+uhsmJegZc=
-			</data>
-		</dict>
-		<key>Headers/PermissionsChecker.h</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			3uFCk40UNtqDMZtbcfKlt6dvi8Y=
-			</data>
-			<key>hash2</key>
-			<data>
-			o0PYxvb9FgOXvP4ao5IphwK457b9n/NCwjIe5PDjK5w=
+			D7sQWexgWIk2D5ibOKSGk8U9/FXlP03+AAhCF55UttY=
 			</data>
 		</dict>
 		<key>Headers/Versions.h</key>
@@ -345,88 +330,88 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			ltsCgTA3/C5cvkbW1uBcJzk3Atk=
+			EKL1BiS+fdRBtoTuGm2v3MWrfIU=
 			</data>
 			<key>hash2</key>
 			<data>
-			Q+K7QElFa4wOUuKYmRFjhv3YeXtDgJ8CjZjM3Ap0L8g=
+			mYW4GHQe+up7an4gsomjGw8BYxUfVse5GtYxVKomGPA=
 			</data>
 		</dict>
 		<key>Headers/WaltzAccess-Swift.h</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			IHfgLItYp03F36FTaLGbVVmSipc=
+			tE2FrqPmHbIKPY4NpJAMUCIsGNE=
 			</data>
 			<key>hash2</key>
 			<data>
-			0x2gaIWmfJ3L+7wiUSsyGSYWoMdvVRuItE8pzUxfds8=
+			0rNoCnQ0XBhBSa0AJYf5lO3BT3BKvdlSQ0svzwKGjL0=
 			</data>
 		</dict>
 		<key>Headers/WaltzAccess.h</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			WIGmz+228CWXFa+f2X4WaQMwCaE=
+			fGdhcJO0iFY8SBX8ixNPqK9KtcA=
 			</data>
 			<key>hash2</key>
 			<data>
-			0oqHhGLDb2FEDUmx0M2BhgIiTCrQb1hUxF8SqshE9hM=
+			gOADpp8YrCBipoxiKW4t5BoTgRdN93ddXt4SPIWASTg=
 			</data>
 		</dict>
 		<key>Headers/WltzResponseConstants.h</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			CCC9BFJme5n1VtBhM9hTvzVJzE0=
+			W4xlQfgqGu8WCfl647bxo8w4jrk=
 			</data>
 			<key>hash2</key>
 			<data>
-			01Hjo8JVAYcZRf2OHnslrLCO2xFFoJmUnEJNP78qIRQ=
+			2DkMPUuqg5WGxEbkhw/fW08gb/2U3ChiduOgm+hfVko=
 			</data>
 		</dict>
 		<key>Modules/WaltzAccess.swiftmodule/arm.swiftdoc</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			lb4RYAChfZ8t4B51ghjaqK2Dg6w=
+			wYi9lhWogE9lMtSZ9mPoYtedca8=
 			</data>
 			<key>hash2</key>
 			<data>
-			7fKNN/COwhKfZFPwDORe4POw1k2om2mLJsPe/UFGwGM=
+			Nq0Z4YNpfJNf6q3BzBY7s73wv1QBaxKNQeLlvLfUAXQ=
 			</data>
 		</dict>
 		<key>Modules/WaltzAccess.swiftmodule/arm.swiftmodule</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			rPnO9e0+RNwtxSvMhUYEd817mdA=
+			H/+/LOtcAJgcxWiub5G1gRJV9Zw=
 			</data>
 			<key>hash2</key>
 			<data>
-			1d+6AMRxZowASyjiuXCqqx5BlWUrXDHbh+oW4ctmh0A=
+			AqsUBqOrzL9b5TgETt36NbcSsc9MnVFSjz0tLw54l1E=
 			</data>
 		</dict>
 		<key>Modules/WaltzAccess.swiftmodule/arm64.swiftdoc</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			vwvMxTtAOdozvsuDjKk0gXlyh64=
+			ds5A8X2BwLqne//V4Kh6qGY0CgI=
 			</data>
 			<key>hash2</key>
 			<data>
-			pc7yzG3Kf6gg+MWUuh5AeCIEooaFzX/ftuf+QaAVh04=
+			ajoc5o/IQr/rVh30ssaSM6OLEP4GV/0OBD7eSbODQks=
 			</data>
 		</dict>
 		<key>Modules/WaltzAccess.swiftmodule/arm64.swiftmodule</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			WAsKNmeNYCrbBXSQvHfjGFTckmc=
+			2Q0WvCzxkKB7H/IYcS0Z2Xq1SAg=
 			</data>
 			<key>hash2</key>
 			<data>
-			GHhXwtpL1E9jP1ts1Jft4Qa2JQSNr/KRjDrvFwuuxkQ=
+			ejGbuAyLhmLGvXdJ238BfrnCgdaSnAv/RSNGjTgI2jk=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
@@ -455,88 +440,88 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			jHgThmuclhSEyCfwqZXViSVzetI=
+			z+LFucdtfeCIZSAM3jT+UXY6qdw=
 			</data>
 			<key>hash2</key>
 			<data>
-			NNyP7PhmX5nELJZM0IJWY61jcfnu8E+TbSzuryFdHjU=
+			xsqcejhSq9v2OqIsoLpUkFipaxh7obsi+msinzc6aGg=
 			</data>
 		</dict>
 		<key>WltzSDKStoryboard.storyboardc/JnF-TB-6K5-view-Ufx-TH-coM.nib/runtime.nib</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			ayci+OP4ZJ2GoGRNPFyjZqRsCeM=
+			8F6Nt1fHSdxY87OqAybiPvEsYRY=
 			</data>
 			<key>hash2</key>
 			<data>
-			2I61SWAE/8YCb4LFNEKnW5rIm8mAG5gA6Z3eWH91vPI=
+			FrVM1Jo69Omlxdr9UAN/EcFOxg7qPa3zmYUan2wKOKE=
 			</data>
 		</dict>
 		<key>WltzSDKStoryboard.storyboardc/LoginViewControllerID.nib/objects-11.0+.nib</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			iOTtmYIr5n4j2xl14XTL3GktzrM=
+			4orfCFZ4np+vx0kqNNmd6ABb4J0=
 			</data>
 			<key>hash2</key>
 			<data>
-			hj6e8So16Texmd6YYVQ4tSnYk5j9orRbnDYpaUfRpnc=
+			s7rgPlPYiN5uVRb5EiK6G+II3AlZXJCZYhhaYYALJXQ=
 			</data>
 		</dict>
 		<key>WltzSDKStoryboard.storyboardc/LoginViewControllerID.nib/runtime.nib</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			KIAmydrF5ecA7qz18NsNdpY4/zo=
+			wgWWYTslRM2NmBFoCcRJs9rOKzY=
 			</data>
 			<key>hash2</key>
 			<data>
-			UN0BwsM18XFEguif6zDax37CWRJlXbbTPj9+zOcuLSI=
+			2ySscYAVaH2aaUdyieAMbTohnwZMiVA8o9Yc2Wkibg4=
 			</data>
 		</dict>
 		<key>WltzSDKStoryboard.storyboardc/QRPageViewControllerID.nib/objects-11.0+.nib</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			0K8KWQ70hlkUev+a9qEMl2kfoIY=
+			kpskon0z5nUe6f5G4BR/Lf9OnsU=
 			</data>
 			<key>hash2</key>
 			<data>
-			Q9ptwmk/VyL9WERDm8plIFBqcpbrvipKLSPP+7AVG0I=
+			H+m4a2qS5GcR4AcwR2lK/BrOMNaczN2Gg1ZbWFCVQJY=
 			</data>
 		</dict>
 		<key>WltzSDKStoryboard.storyboardc/QRPageViewControllerID.nib/runtime.nib</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			eMFm7PYpx+lcmFd8zw7u6OeTt8M=
+			/nM85lye425KnDmPkv+Di+CJ+Hs=
 			</data>
 			<key>hash2</key>
 			<data>
-			sKyZQ82dk7zPanRfG3Uh8f5Xwd+lsdjO+7iUpswoRkw=
+			DKjLWe3UYf6jYDviscLKtoY39nObBIHKSQ8F6Z+vBHY=
 			</data>
 		</dict>
 		<key>WltzSDKStoryboard.storyboardc/py2-8z-WNI-view-kQV-MT-HHr.nib/objects-11.0+.nib</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			xSebJQm8QwALfuDs50xhgq8ZOvk=
+			KiRa9wJQo4fXe65kwsQDqBpAf/c=
 			</data>
 			<key>hash2</key>
 			<data>
-			Ki3/GGax2Ww1zcBNSH7OSTxJt9byyYwS4Xj1eTRiE4c=
+			fmihFW2S16GWY0f9zZfZ1qqASM/qrbayWhYchxslUmY=
 			</data>
 		</dict>
 		<key>WltzSDKStoryboard.storyboardc/py2-8z-WNI-view-kQV-MT-HHr.nib/runtime.nib</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			iF1JfWhp9vJq+17I/5pYalU7Pzk=
+			7QO1cKSIA1aataFj8LFcrVbgb7c=
 			</data>
 			<key>hash2</key>
 			<data>
-			bvOB8dA5ki5mDEJWQvqGSN7mBQYcmMncWennqPrd2kk=
+			jBk+zGCROxxBJR0qbzAWcDUwW8jM0C88FdlISL+a2JA=
 			</data>
 		</dict>
 		<key>en.lproj/Localizable.strings</key>

@@ -17,7 +17,7 @@
 
 @protocol VersionsHelperDelegate<NSObject>
 @optional
-- (void) didGetVersion:(SDK *_Nullable)versionSDK withErrorCode:(WltzTransactionResponseCodes)errorCode;
+- (void) didGetVersion:(SDK *_Nullable)versionSDK withErrorCode:(WltzSDKResponseCodes)errorCode;
 @end
 
 @interface VersionsHelper : NSObject

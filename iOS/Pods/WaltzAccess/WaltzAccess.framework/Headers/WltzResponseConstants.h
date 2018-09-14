@@ -13,8 +13,10 @@
     The list of response codes that can be returned when performing a 
     Waltz transaction.
  */
-typedef enum{
+typedef enum {
     WltzMissingCameraPermissions = 11,
+    WltzMissingNotificationPermissions,
+    WltzMissingLocationPermissions,
     WltzNoInternetAccess,
     WltzFailedToSignIn,
     WltzFailedToRefreshJWT,
@@ -29,7 +31,8 @@ typedef enum{
     WltzVersionFormatInvalid,
     WltzVersionError,
     WltzMutualLogout,
+    WltzFailedToFetchGeofences,
     WltzNoError
-}WltzTransactionResponseCodes;
+} WltzSDKResponseCodes;
 
 #endif /* WltzResponseConstants_h */
