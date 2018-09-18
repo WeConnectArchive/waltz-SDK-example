@@ -27,7 +27,7 @@ class ViewController: UIViewController, WltzSDKMgrDelegate {
          The SDK needs a valid key to start the transaction.
          Please contact the Waltz team to have one.
          */
-        WaltzSDKMgr.sharedManager.beginTransaction(withLicenseKey: "PUT---YOUR---iOS---LICENSE---HERE")
+        WaltzSDKMgr.sharedManager.beginTransaction()
         WaltzSDKMgr.sharedManager.delegate = self
     }
     

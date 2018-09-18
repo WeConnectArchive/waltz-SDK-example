@@ -17,6 +17,12 @@ extern NSString *const StoryboardName;
 extern NSString *const LoginStoryBoardID;
 
 /*
+ The keys used to store and retrive values from NSUserDefaults
+ */
+extern NSString *const kLicense;
+extern NSString *const kVendorUUID;
+
+/*
     Regex for password and email
  */
 extern NSString *const PASSWORD_REGEX;
