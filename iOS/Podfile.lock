@@ -3,7 +3,7 @@ PODS:
   - Freddy (3.0.3)
   - JWTDecode (2.1.1)
   - UICKeyChainStore (2.1.1)
-  - WaltzAccess (0.2.2):
+  - WaltzAccess (0.2.6):
     - Alamofire
     - Freddy
     - JWTDecode
@@ -18,7 +18,7 @@ SPEC REPOS:
     - Freddy
     - JWTDecode
     - UICKeyChainStore
-  https://github.com/WaltzApp/Podspecs.git:
+  https://github.com/WaltzApp/Podspecs-SNAPSHOT.git:
     - WaltzAccess
 
 SPEC CHECKSUMS:
@@ -26,8 +26,8 @@ SPEC CHECKSUMS:
   Freddy: 7c62db262a0d0e3b3e2b8b40f2c0cc51e122fbc4
   JWTDecode: 83e8b381aafe27158d9f692cbdca2b12d61d460c
   UICKeyChainStore: 239558492fa260531a0774cfc611ea83a6eaff3a
-  WaltzAccess: a2fe47e58d93485741ce7ad61be903ba32c50b82
+  WaltzAccess: 844b53f463b43eb02a58ccd99345baae164acd58
 
-PODFILE CHECKSUM: 9b2ad54b0ff7bc533156ac22fae2c63ba257ccdc
+PODFILE CHECKSUM: eac42096034cd4adf1068fd70ab293b1c9cd466b
 
 COCOAPODS: 1.5.3
