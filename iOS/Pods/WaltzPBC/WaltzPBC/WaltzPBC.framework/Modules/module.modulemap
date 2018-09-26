@@ -1,4 +1,11 @@
 framework module WaltzPBC {
-  header "WaltzPBC-Swift.h"
-  requires objc
+  umbrella header "WaltzPBC.h"
+
+  export *
+  module * { export * }
+}
+
+module WaltzPBC.Swift {
+    header "WaltzPBC-Swift.h"
+    requires objc
 }
