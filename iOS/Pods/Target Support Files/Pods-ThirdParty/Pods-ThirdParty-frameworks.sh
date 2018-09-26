@@ -147,14 +147,16 @@ if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "${BUILT_PRODUCTS_DIR}/Freddy/Freddy.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/JWTDecode/JWTDecode.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/UICKeyChainStore/UICKeyChainStore.framework"
-  install_framework "${PODS_ROOT}/WaltzAccess/WaltzAccess.framework"
+  install_framework "${PODS_ROOT}/WaltzAccess/WaltzAccess/WaltzAccess.framework"
+  install_framework "${PODS_ROOT}/WaltzPBC/WaltzPBC/WaltzPBC.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/Freddy/Freddy.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/JWTDecode/JWTDecode.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/UICKeyChainStore/UICKeyChainStore.framework"
-  install_framework "${PODS_ROOT}/WaltzAccess/WaltzAccess.framework"
+  install_framework "${PODS_ROOT}/WaltzAccess/WaltzAccess/WaltzAccess.framework"
+  install_framework "${PODS_ROOT}/WaltzPBC/WaltzPBC/WaltzPBC.framework"
 fi
 if [ "${COCOAPODS_PARALLEL_CODE_SIGN}" == "true" ]; then
   wait

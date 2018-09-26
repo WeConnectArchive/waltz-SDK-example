@@ -1,0 +1,4 @@
+framework module WaltzPBC {
+  header "WaltzPBC-Swift.h"
+  requires objc
+}
