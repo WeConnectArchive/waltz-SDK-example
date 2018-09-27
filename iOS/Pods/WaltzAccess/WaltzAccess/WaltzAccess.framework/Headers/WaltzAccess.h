@@ -19,6 +19,3 @@ FOUNDATION_EXPORT const unsigned char WaltzAccessVersionString[];
 #import "ZBarSDK.h"
 
 #import "Constants.h"
-#import "PermissionsChecker.h"
-#import "Versions.h"
-#import "VersionsHelper.h"

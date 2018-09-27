@@ -14,25 +14,44 @@
     Waltz transaction.
  */
 typedef enum {
-    WltzMissingCameraPermissions = 11,
-    WltzMissingNotificationPermissions,
-    WltzMissingLocationPermissions,
-    WltzNoInternetAccess,
-    WltzFailedToSignIn,
-    WltzFailedToRefreshJWT,
-    WltzFailedToResetEmail,
-    WltzFailedToRefreshKeys,
-    WltzCouldNotFinishTransaction,
-    WltzAcessGranted,
-    WltzUserCancelledTransaction,
-    WltzTrialPeriodExpired,
-    WltzIncorredLicenseKey,
-    WltzSDKVersionInvalid,
-    WltzVersionFormatInvalid,
-    WltzVersionError,
-    WltzMutualLogout,
-    WltzFailedToFetchGeofences,
-    WltzNoError
-} WltzSDKResponseCodes;
+    
+    // SDK validation
+    VENDOR_UID_NOT_EXIST,
+    LICENSE_KEY_NOT_EXIST,
+    LICENSE_KEY_IS_EXPIRED,
+    SDK_VERSION_IS_EXPIRED,
+    NO_INTERNET_CONNECTION,
+    UNKNOWN_PLATFORM,
+    INVALID_JWT,
+    SHOULD_LOGIN,
+    
+    // Transaction
+    ACCESS_GRANTED,
+    ACCESS_DENIED,
+    CAMERA_PERSMISSION_NOT_GRANTED,
+    
+    // Authentification
+    FORGOT_PASSWORD_REQUEST_SEND,
+    // LOGIN_CANCELLED,
+    LOGIN_FAILED,
+    LOGOUT,
+    
+    // Guests
+    INVALID_FIRST_NAME,
+    INVALID_LAST_NAME,
+    INVALID_EMAIL_FORMAT,
+    INVALID_START_DATE,
+    INVIALID_END_DATE,
+    USER_CANNOT_INVITE,
+    
+    // Geofence
+    LOCATION_PERSMISSION_NOT_GRANTED,
+    NOTIFICATION_PERSMISSION_NOT_GRANTED,
+    
+    // Backend response
+    SUCCESS,
+    FAILURE,
+    BACKEND_OFFLINE
+} SDKResponseCodes;
 
 #endif /* WltzResponseConstants_h */

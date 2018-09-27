@@ -40,11 +40,11 @@ class ViewController: UIViewController, WltzSDKMgrDelegate {
         WaltzSDKMgr.sharedManager.stopGeofenceService()
     }
     
-    func didFinishWaltzTransactionWithErrorCode(_ errorCode: WltzSDKResponseCodes) {
+    func didFinishWaltzTransactionWithErrorCode(_ errorCode: SDKResponseCodes) {
         print("The application quit with error code \(errorCode)")
     }
     
-    func didFinishWaltzGeofenceSetupWithErrorCode(_ errorCode: WltzSDKResponseCodes) {
+    func didFinishWaltzGeofenceSetupWithErrorCode(_ errorCode: SDKResponseCodes) {
         print("The application quit with error code \(errorCode)")
     }
     

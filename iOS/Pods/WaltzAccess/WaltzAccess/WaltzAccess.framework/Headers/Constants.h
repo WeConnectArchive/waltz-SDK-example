@@ -36,5 +36,5 @@ typedef enum {
 } CameraPersmissionsAuthStatus;
 
 @protocol WltzTransactionProgressDelegate <NSObject>
-- (void) didFinishTransactionWithOptionalError:(WltzSDKResponseCodes)errorCode;
+- (void) didFinishTransactionWithOptionalError:(SDKResponseCodes)errorCode;
 @end
