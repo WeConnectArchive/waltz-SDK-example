@@ -20,6 +20,8 @@ class ViewController: UIViewController, WltzSDKMgrDelegate {
         requestCameraPermission()
         PermissionsChecker.sharedInstance.requestPermissionForNotifications()
         PermissionsChecker.sharedInstance.requestLocationPermission()
+        
+        WaltzSDKMgr.sharedManager.delegate = self
     }
     
     @IBAction func startTransaction(_ sender: UIButton) {
@@ -28,7 +30,6 @@ class ViewController: UIViewController, WltzSDKMgrDelegate {
          Please contact the Waltz team to have one.
          */
         WaltzSDKMgr.sharedManager.beginTransaction()
-        WaltzSDKMgr.sharedManager.delegate = self
     }
     
     @IBAction func startGeofence(_ sender: UIButton) {
