@@ -7,65 +7,130 @@ cd iOS
 
 pod install
 
+## SDK initialization
 
-Open the workspace (ThirdParty.xcworkspace)
+1. Open the workspace (ThirdParty.xcworkspace)
 
-Open the ViewController.swift
+2. Open the AppDelegate.swift
 
-Change the following line with your license:
+3. Change the following line with your license and your appUid:
 
-WaltzTransactionMgr.sharedManager.beginTransaction(withLicenseKey: "PUT---YOUR---iOS---LICENSE---HERE")
-
-
-You can build and run on a device
-
-You Need to click on "Start transaction"
-
-Then the first time you will have to log with valid credential and you will then be redirect to the QR that will enable you to open a door (that you have access)
+        WaltzSDKMgr.sharedManager.initManager(licenseKey: "PUT---YOUR---iOS---LICENSE---HERE", appUid: "PUT---YOUR---VENDOR---UUID---HERE")
 
 
-You have 1 callback (WltzTransactionMgrDelegate) that you can implement:
-
-    func didFinishWaltzTransactionWithErrorCode(_ errorCode: WltzTransactionResponseCodes)
+You can now build and run on a device
 
 
-The code you can receive are the following:
+## Start a transaction
 
-typedef enum{
+Internet connection is required
 
-    WltzMissingCameraPermissions = 11,
+You need to request the camera permission
 
-    WltzNoInternetAccess,
+1. You need to call the fallowing function:
 
-    WltzFailedToSignIn,
+        WaltzSDKMgr.sharedManager.beginTransaction()
 
-    WltzFailedToRefreshJWT,
+Then the first time you will have to log with valid credential and you will then be redirect to the QR that will enable you to open a door (that you have access) after that the user won't have to log again if he use the application regularly.
 
-    WltzFailedToResetEmail,
+2. Transaction result: you have 1 callback (WltzSDKMgrDelegate) that you can implement:
 
-    WltzFailedToRefreshKeys,
-
-    WltzCouldNotFinishTransaction,
-
-    WltzAcessGranted,
-
-    WltzUserCancelledTransaction,
-
-    WltzTrialPeriodExpired,
-
-    WltzIncorredLicenseKey,
-
-    WltzSDKVersionInvalid,
-
-    WltzVersionFormatInvalid,
-
-    WltzVersionError,
-
-    WltzMutualLogout,
-
-    WltzNoError
+        func didFinishWaltzTransactionWithErrorCode(_ errorCode: SDKResponseCodes)
     
-}WltzTransactionResponseCodes;
+## Geofencing feature
+
+The user have to be logged in to use it.
+Internet connection is required for the first call after that it is no longer need but if it is not provided the geofence won't be updated.
+
+You need to request the location and notication permission
+
+1. Start the service
+
+        WaltzSDKMgr.sharedManager.startGeofenceService()
+    
+2. Stop the service
+
+        WaltzSDKMgr.sharedManager.stopGeofenceService()
+
+3. Gefence result: you have 1 callback (WltzSDKMgrDelegate) that you can implement:
+
+        func didFinishWaltzGeofenceSetupWithErrorCode(_ errorCode: SDKResponseCodes)
+
+## Guest feature
+
+The user have to be logged in to use it.
+Internet connection is required for all calls
+
+1. Send an invitation
+
+        let firstName = "iOS SDK first name"
+        let lastName = "iOS SDK last name"
+        let email = "iossdk@example.com"
+        let phoneNumber = "5145457878"
+        
+        let startDate = Date()
+        let endDate = Date(timeIntervalSinceNow: 30*60)
+        WaltzSDKMgr.sharedManager.sendInvitation(firstName: firstName, lastName: lastName, email: email, phoneNumber: phoneNumber, startDate: startDate, endDate: endDate)
+
+2. My Guests (invitations sent)
+
+        WaltzSDKMgr.sharedManager.getMyGuests()
+
+3. My Invitations (invitations received)
+
+        WaltzSDKMgr.sharedManager.getMyInvitations()
+
+4. Results are sent in those 3 functions:
+
+        func didGetWaltzMyGuestsWithErrorCode(_ errorCode: SDKResponseCodes, guests: [InvitationResponse]?)
+
+        func didGetWaltzMyInvitationsWithErrorCode(_ errorCode: SDKResponseCodes, invitations: [InvitationResponse]?)
+
+        func didSendWaltzInvitationWithErrorCode(_ errorCode: SDKResponseCodes)
+    
+2 first two have a list of invitations that were made by the user and the last one only the status
+
+## Waltz error code
+
+    typedef enum {
+    
+	// SDK validation
+	APP_UID_NOT_EXIST,
+	LICENSE_KEY_NOT_EXIST,
+	LICENSE_KEY_IS_EXPIRED,
+	SDK_VERSION_IS_EXPIRED,
+	NO_INTERNET_CONNECTION,
+	UNKNOWN_PLATFORM,
+	INVALID_JWT,
+	SHOULD_LOGIN,
+
+	// Transaction
+	ACCESS_GRANTED,
+	ACCESS_DENIED,
+	CAMERA_PERSMISSION_NOT_GRANTED,
+
+	// Authentification
+	FORGOT_PASSWORD_REQUEST_SEND,
+	LOGIN_CANCELLED,
+	LOGIN_FAILED,
+	LOGOUT,
+
+	// Guests
+	INVALID_FIRST_NAME,
+	INVALID_LAST_NAME,
+	INVALID_EMAIL_FORMAT,
+	INVALID_START_DATE,
+	INVALID_END_DATE,
+	USER_CANNOT_INVITE,
+
+	// Geofence
+	LOCATION_PERSMISSION_NOT_GRANTED,
+	NOTIFICATION_PERSMISSION_NOT_GRANTED,
+
+	// Backend response
+	SUCCESS,
+	FAILURE
+    } SDKResponseCodes;
 
 # Android
 cd Android
