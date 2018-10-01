@@ -9,11 +9,20 @@ pod install
 
 ## SDK initialization
 
-1. Open the workspace (ThirdParty.xcworkspace)
+1. In your Podfile make sure to add the following sources:
 
-2. Open the AppDelegate.swift
+    source 'https://github.com/WaltzApp/Podspecs.git' # To have access to Waltz Pods/Framework
+    source 'https://github.com/CocoaPods/Specs.git'   # To continue to have access to regular Public Pods
 
-3. Change the following line with your license and your appUid:
+2. Add the following dependency:
+
+    pod 'WaltzAccess', :inhibit_warnings => true
+
+3. Open the workspace (ThirdParty.xcworkspace)
+
+4. Open the AppDelegate.swift
+
+5. Change the following line with your license and your appUid:
 
         WaltzSDKMgr.sharedManager.initManager(licenseKey: "PUT---YOUR---iOS---LICENSE---HERE", appUid: "PUT---YOUR---VENDOR---UUID---HERE")
 
