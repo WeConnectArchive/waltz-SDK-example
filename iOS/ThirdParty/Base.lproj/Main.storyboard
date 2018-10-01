@@ -21,6 +21,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="t7z-Ee-5qF">
+                                <rect key="frame" x="20" y="40" width="335" height="275.5"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Rl-M3-UkX">
                                 <rect key="frame" x="115.5" y="315.5" width="144" height="36"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
@@ -45,17 +51,56 @@
                                     <action selector="stopGeofence:" destination="BYZ-38-t0r" eventType="touchUpInside" id="bPQ-7s-Y7o"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aai-Gb-3pH">
+                                <rect key="frame" x="142" y="423.5" width="91" height="36"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="My guests"/>
+                                <connections>
+                                    <action selector="getMyGuestsList:" destination="BYZ-38-t0r" eventType="touchUpInside" id="iKF-eN-7w5"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CZ0-5v-SkV">
+                                <rect key="frame" x="127" y="459.5" width="121" height="36"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="My invitations"/>
+                                <connections>
+                                    <action selector="getMyInvitationsList:" destination="BYZ-38-t0r" eventType="touchUpInside" id="3ze-Yy-OiA"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="G5L-hA-Ufe">
+                                <rect key="frame" x="123" y="495.5" width="129" height="36"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="Send invitation"/>
+                                <connections>
+                                    <action selector="sendInvitation:" destination="BYZ-38-t0r" eventType="touchUpInside" id="47t-fZ-lTV"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="t7z-Ee-5qF" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20" id="4c8-fM-byr"/>
                             <constraint firstItem="4Rl-M3-UkX" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="8to-0K-nQw"/>
                             <constraint firstItem="hyA-ML-PoM" firstAttribute="top" secondItem="Eme-7v-LeR" secondAttribute="bottom" id="Clv-of-guh"/>
+                            <constraint firstItem="G5L-hA-Ufe" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="GHP-Le-bti"/>
+                            <constraint firstItem="aai-Gb-3pH" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="HcH-Xd-K80"/>
+                            <constraint firstItem="CZ0-5v-SkV" firstAttribute="top" secondItem="aai-Gb-3pH" secondAttribute="bottom" id="INd-9z-IZg"/>
                             <constraint firstItem="4Rl-M3-UkX" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="JUL-cJ-hjV"/>
+                            <constraint firstItem="t7z-Ee-5qF" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="20" id="Kl2-qR-Re8"/>
+                            <constraint firstItem="G5L-hA-Ufe" firstAttribute="top" secondItem="CZ0-5v-SkV" secondAttribute="bottom" id="OU6-za-cVV"/>
                             <constraint firstItem="Eme-7v-LeR" firstAttribute="top" secondItem="4Rl-M3-UkX" secondAttribute="bottom" id="OkT-5u-RhK"/>
                             <constraint firstItem="Eme-7v-LeR" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="epL-cp-1IO"/>
+                            <constraint firstItem="t7z-Ee-5qF" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="fcX-JS-MAe"/>
+                            <constraint firstItem="t7z-Ee-5qF" firstAttribute="bottom" secondItem="4Rl-M3-UkX" secondAttribute="top" id="hUC-oI-9hj"/>
+                            <constraint firstItem="CZ0-5v-SkV" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="iqG-5W-Nnz"/>
+                            <constraint firstItem="aai-Gb-3pH" firstAttribute="top" secondItem="hyA-ML-PoM" secondAttribute="bottom" id="nfI-Ad-mEK"/>
                             <constraint firstItem="hyA-ML-PoM" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="rhh-gG-vPI"/>
+                            <constraint firstItem="t7z-Ee-5qF" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="u2q-O0-Rga"/>
+                            <constraint firstAttribute="trailing" secondItem="t7z-Ee-5qF" secondAttribute="trailing" constant="20" id="zRj-PO-v3M"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="responseTV" destination="t7z-Ee-5qF" id="gFs-u7-mww"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

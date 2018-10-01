@@ -184,9 +184,26 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 # pragma pop_macro("any")
 #endif
 
+@class Person;
 
-SWIFT_CLASS("_TtC11WaltzAccess16GeofenceResponse")
-@interface GeofenceResponse : NSObject
+SWIFT_CLASS("_TtC11WaltzAccess18InvitationResponse")
+@interface InvitationResponse : NSObject
+- (NSString * _Nonnull)getStatusName SWIFT_WARN_UNUSED_RESULT;
+@property (nonatomic, readonly, copy) NSString * _Nonnull organizationName;
+@property (nonatomic, readonly, copy) NSString * _Nonnull organizationAddress;
+@property (nonatomic, readonly, copy) NSString * _Nonnull doorScheduleStart;
+@property (nonatomic, readonly, copy) NSString * _Nonnull doorScheduleStop;
+@property (nonatomic, readonly, strong) Person * _Nonnull guest;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_DEPRECATED_MSG("-init is unavailable");
+@end
+
+
+SWIFT_CLASS("_TtC11WaltzAccess6Person")
+@interface Person : NSObject
+@property (nonatomic, readonly, copy) NSString * _Nonnull name;
+@property (nonatomic, readonly, copy) NSString * _Nonnull email;
+- (nonnull instancetype)initWithFirstName:(NSString * _Nonnull)firstName lastName:(NSString * _Nonnull)lastName email:(NSString * _Nonnull)email phone:(NSString * _Nullable)phone avatarPath:(NSString * _Nullable)avatarPath OBJC_DESIGNATED_INITIALIZER;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_DEPRECATED_MSG("-init is unavailable");
 @end

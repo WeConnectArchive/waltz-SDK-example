@@ -16,7 +16,7 @@
 typedef enum {
     
     // SDK validation
-    VENDOR_UID_NOT_EXIST,
+    APP_UID_NOT_EXIST,
     LICENSE_KEY_NOT_EXIST,
     LICENSE_KEY_IS_EXPIRED,
     SDK_VERSION_IS_EXPIRED,
@@ -32,7 +32,7 @@ typedef enum {
     
     // Authentification
     FORGOT_PASSWORD_REQUEST_SEND,
-    // LOGIN_CANCELLED,
+    LOGIN_CANCELLED,
     LOGIN_FAILED,
     LOGOUT,
     
@@ -41,7 +41,7 @@ typedef enum {
     INVALID_LAST_NAME,
     INVALID_EMAIL_FORMAT,
     INVALID_START_DATE,
-    INVIALID_END_DATE,
+    INVALID_END_DATE,
     USER_CANNOT_INVITE,
     
     // Geofence
@@ -50,8 +50,7 @@ typedef enum {
     
     // Backend response
     SUCCESS,
-    FAILURE,
-    BACKEND_OFFLINE
+    FAILURE
 } SDKResponseCodes;
 
 #endif /* WltzResponseConstants_h */

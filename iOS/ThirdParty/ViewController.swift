@@ -11,6 +11,8 @@ import WaltzAccess
 
 class ViewController: UIViewController, WltzSDKMgrDelegate {
 
+    @IBOutlet weak var responseTV: UITextView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         /*
@@ -41,12 +43,61 @@ class ViewController: UIViewController, WltzSDKMgrDelegate {
         WaltzSDKMgr.sharedManager.stopGeofenceService()
     }
     
+    @IBAction func getMyGuestsList(_ sender: UIButton) {
+        responseTV.text = ""
+        
+        WaltzSDKMgr.sharedManager.getMyGuests()
+    }
+    
+    @IBAction func getMyInvitationsList(_ sender: UIButton) {
+        responseTV.text = ""
+        
+        WaltzSDKMgr.sharedManager.getMyInvitations()
+    }
+    
+    @IBAction func sendInvitation(_ sender: UIButton) {
+        responseTV.text = ""
+        
+        let firstName = "iOS SDK first name"
+        let lastName = "iOS SDK last name"
+        let email = "iossdk@example.com"
+        let phoneNumber = "5145457878"
+        
+        let startDate = Date()
+        let endDate = Date(timeIntervalSinceNow: 30*60)
+        WaltzSDKMgr.sharedManager.sendInvitation(firstName: firstName, lastName: lastName, email: email, phoneNumber: phoneNumber, startDate: startDate, endDate: endDate)
+    }
+    
     func didFinishWaltzTransactionWithErrorCode(_ errorCode: SDKResponseCodes) {
-        print("The application quit with error code \(errorCode)")
+        print("The Transaction quit with error code \(errorCode)")
     }
     
     func didFinishWaltzGeofenceSetupWithErrorCode(_ errorCode: SDKResponseCodes) {
-        print("The application quit with error code \(errorCode)")
+        print("The Geofence quit with error code \(errorCode)")
+    }
+    
+    func didGetWaltzMyGuestsWithErrorCode(_ errorCode: SDKResponseCodes, guests: [InvitationResponse]?) {
+        print("The Get my Guests quit with error code \(errorCode)")
+
+        if errorCode == SUCCESS {
+            responseTV.text = try! guests!.toJSON().serializeString()
+        }
+    }
+    
+    func didGetWaltzMyInvitationsWithErrorCode(_ errorCode: SDKResponseCodes, invitations: [InvitationResponse]?) {
+        print("The Get my Invitations quit with error code \(errorCode)")
+        
+        if errorCode == SUCCESS {
+            responseTV.text = try! invitations!.toJSON().serializeString()
+        }
+    }
+    
+    func didSendWaltzInvitationWithErrorCode(_ errorCode: SDKResponseCodes) {
+        print("The Send Invitation quit with error code \(errorCode)")
+        
+        if errorCode == SUCCESS {
+            responseTV.text = "Success"
+        }
     }
     
     func requestCameraPermission() {
