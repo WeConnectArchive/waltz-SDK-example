@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	>
+	<LinearLayout
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:gravity="center"
+		android:orientation="vertical"
+		>
+		
+		<Button
+			android:id="@+id/start_transaction"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:layout_marginBottom="8dp"
+			android:layout_marginEnd="64dp"
+			android:layout_marginStart="64dp"
+			android:layout_marginTop="8dp"
+			android:text="Start Transaction"
+			/>
+		
+		<Button
+			android:id="@+id/start_geofence"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:layout_marginBottom="8dp"
+			android:layout_marginEnd="64dp"
+			android:layout_marginStart="64dp"
+			android:layout_marginTop="8dp"
+			android:text="start geofence"
+			/>
+		
+		<Button
+			android:id="@+id/stop_geofence"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:layout_marginBottom="8dp"
+			android:layout_marginEnd="64dp"
+			android:layout_marginStart="64dp"
+			android:layout_marginTop="8dp"
+			android:text="stop geofence"
+			/>
+		
+		<Button
+			android:id="@+id/send_invitation"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:layout_marginBottom="8dp"
+			android:layout_marginEnd="64dp"
+			android:layout_marginStart="64dp"
+			android:layout_marginTop="8dp"
+			android:text="Send invitation"
+			/>
+		
+		<Button
+			android:id="@+id/my_guests"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:layout_marginBottom="8dp"
+			android:layout_marginEnd="64dp"
+			android:layout_marginStart="64dp"
+			android:layout_marginTop="8dp"
+			android:text="My Guests"
+			/>
+		
+		<Button
+			android:id="@+id/my_invitations"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:layout_marginBottom="8dp"
+			android:layout_marginEnd="64dp"
+			android:layout_marginStart="64dp"
+			android:layout_marginTop="8dp"
+			android:text="My invitations"
+			/>
+		
+		<TextView
+			android:id="@+id/invitations_result"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:layout_marginBottom="8dp"
+			android:layout_marginEnd="64dp"
+			android:layout_marginStart="64dp"
+			android:layout_marginTop="8dp"
+			/>
+		
+		<Button
+			android:id="@+id/clear"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:layout_marginBottom="8dp"
+			android:layout_marginEnd="64dp"
+			android:layout_marginStart="64dp"
+			android:layout_marginTop="8dp"
+			android:text="Clear data"
+			/>
+	
+	</LinearLayout>
+
+</ScrollView>
+

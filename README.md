@@ -72,21 +72,28 @@ cd Android
 
 The Waltz Android SDK is functional and ready to use if you have a valid Waltz account with access to doors.
 
-How to set up an Android project to use our Waltz Android SDK:
+## How to set up an Android project to use our Waltz Android SDK:
 
-1. Get a license key.
+1. Get your AppUid and your LicenseKey.
 
-2. Top-level build.gradle:
+2. gradle.properties:
+
+		### Waltz Artifcatory Credentials ###
+		waltz_url=https://waltzapp.jfrog.io/waltzapp/waltz-release-libs
+		waltz_username=waltz-android-partner
+		waltz_password=APgNfotiYNKjKxnsJLGic6xAfw
+
+3. Top-level build.gradle:
 
 		allprojects {
 			repositories {
 				...
 				maven {
-            		url waltz_url
-             		credentials {
-                 		username waltz_username
-                 		password waltz_password
-             		}
+            		    url waltz_url
+             		    credentials {
+                 		    username waltz_username
+                 		    password waltz_password
+             		    }
          		}
      		}
  		}
@@ -101,53 +108,192 @@ How to set up an Android project to use our Waltz Android SDK:
  			dependencies {
    
      			// Android
-     			implementation 'com.android.support:appcompat-v7:28.0.0-rc02'
+     			implementation 'com.android.support:appcompat-v7:28.0.0'
      			...
 
      			// Waltz
-     			implementation 'com.waltzapp.transaction:waltz-sdk:1.0.13'
+     			implementation 'com.waltzapp.transaction:waltz-sdk:1.1.0-rc01'
 			}
 		}
 
 4. Sync Project with Gradle Files
 
-5. On your Activity or fragment
+## SDK initialization
 
- 		// Note : Request camera permission before calling startTransaction().
- 		private void startTransaction() {
-     		mTransactionFragment = TransactionFragment.newInstance("YOUR_LICENSE_KEY", getListener());
-     		getSupportFragmentManager()
-             	.beginTransaction()
-             	.replace(android.R.id.content, fragment)
-             	.addToBackStack(null)
-             	.commit();
- 		}
+On your Application class
 
- 		private TransactionFragment.Listener getListener() {
-     		return new TransactionFragment.Listener() {
-         		@Override
-         		public void onTransactionDone(TransactionFragment.StatusCode code) {
-             		Toast.makeText(MainActivity.this, "Status code: " + code, Toast.LENGTH_SHORT).show();
-             		getSupportFragmentManager().popBackStack();
-         		}
-     		};
- 		}
+        	// Waltz SDK initialization
+        	WaltzSDK
+                	.getInstance()
+                	.setContext(this)
+                	.setAppUid("___YOUR_APP_UID___")
+                	.setLicenseKey("__YOUR_LICENSE_KEY__")
+                	.init();
+
+## Start a transaction
+
+1. On your Activity or fragment
+
+		public void onStartTransaction() {
+			WaltzTransactionFragment fragment = WaltzTransactionFragment.newInstance(new WaltzCallback() {
+				@Override
+				public void onTransactionDone(WaltzCode waltzCode) {
+					if (waltzCode == WaltzCode.ACCESS_GRANTED) {
+						// Handle ACCESS_GRANTED waltz code
+					}
+					else {
+						// Handle ACCESS_DENIED waltz code
+					}
+				}
+			});
+			startFragment(fragment);
+		}
+
+		private void startFragment(Fragment fragment) {
+			getSupportFragmentManager()
+				.beginTransaction()
+				.replace(R.id.main_content, fragment)
+				.addToBackStack(null)
+				.commit();
+		}
 
 
-		//Possible code
-		public enum StatusCode {
-     		ACCESS_GRANTED,
-     		ACCESS_DENIED,
-     		CAMERA_PERMISSION_NOT_GRANTED,
-     		INVALID_LICENSE_KEY,          
-     		INVALID_JWT,
-     		INVALID_SDK_VERSION,
-     		SDK_IS_EXPIRED,               // The SDK version is out of date
-     		NO_INTERNET_CONNECTION,       
-     		BACKEND_OFFLINE,
-     		ERROR_VERSION,
-     		LOGIN_FAILED,                 // Invalid username or password
-     		LOGIN_CANCELLED,              // Login cancelled
-     		FORGOT_PASSWORD_REQUEST_SENT, // The user sent a request to reset his password
-     		LOGOUT                        // The user logged in an other app
- 		}
+## Geofencing feature
+1. Start the service
+			
+		WaltzSDK
+			.getInstance()
+			.setCallback(new WaltzCallback() {
+			    @Override
+			    public void onTransactionDone(WaltzCode waltzCode) {
+				Toast.makeText(getContext(), "Status code: " + waltzCode, Toast.LENGTH_SHORT).show();
+			    }
+			})
+			.startGeofencing();
+
+2. Stop the service
+
+		WaltzSDK
+			.getInstance()
+			.setCallback(new WaltzCallback() {
+			    @Override
+			    public void onTransactionDone(WaltzCode waltzCode) {
+				Toast.makeText(getContext(), "Status code: " + waltzCode, Toast.LENGTH_SHORT).show();
+			    }
+			})
+			.stopGeofencing();
+
+3. Customize notification - Call setter when initializing the SDK
+
+        // Waltz SDK initialization
+        WaltzSDK
+                .getInstance()
+                .setContext(this)
+                .setAppUid("___YOUR_APP_UID___")
+                .setLicenseKey("__YOUR_LICENSE_KEY__")
+		
+                .setNotificationTextColor("__YOUR_COLOR__")
+                .setNotificationText("__TEXT_UNDER_THE_TITLE__")
+                .setNotificationIcon("__YOUR_ICON__")
+                .setNotificationLargeIcon("__YOUR_LARGE_ICON__")
+		
+                .init();
+
+
+## Guest feature
+1. Send an invitation
+
+		String firstName = "Android SDK first name";
+		String lastName = "Android SDK last name";
+		String email = "androidsdk@example.com";
+		String phoneNumber = "5145457878"; // Optional
+
+		Calendar calendar = Calendar.getInstance();
+		calendar.setTime(new Date());
+		Date startDate = calendar.getTime();
+
+		calendar.add(Calendar.MINUTE, 30);
+		Date endDate = calendar.getTime();
+
+		WaltzSDK
+			.getInstance()
+			.sendInvitation(firstName, lastName, email, phoneNumber, startDate, endDate, new SendInvitationCallback() {
+			    @Override
+			    public void onInvitationSent(WaltzCode code) {
+				Log.d("LIB", "onInvitationSent() code : " + code);
+				Toast.makeText(getContext(), "Code: " + code, Toast.LENGTH_SHORT).show();
+			    }
+			});
+
+2. My Guests (invitations sent)
+
+		WaltzSDK
+			.getInstance()
+			.fetchMyGuests(new InvitationsCallback() {
+			@Override
+			public void onInvitationsReceived(WaltzCode code, List<Invitation> invitationList) {
+				if (code == WaltzCode.SUCCESS) {
+					// Display result
+				}
+				else {
+					// Handle error
+				}
+			}
+		});
+
+3. My Invitations (invitations received)
+
+		WaltzSDK
+			.getInstance()
+			.fetchMyInvitations(new InvitationsCallback() {
+			@Override
+			public void onInvitationsReceived(WaltzCode code, List<Invitation> invitationList) {
+				if (code == WaltzCode.SUCCESS) {
+				    // Display result
+				}
+				else {
+				    // Handle error
+				}
+			}
+		});
+
+## Waltz error code
+	public enum WaltzCode {
+
+	    // SDK Validation
+	    APP_UID_NOT_EXIST,
+	    LICENSE_KEY_NOT_EXIST,
+	    LICENSE_KEY_IS_EXPIRED,
+	    SDK_VERSION_IS_EXPIRED,
+	    SDK_NOT_INITIALIZED,
+	    NO_INTERNET_CONNECTION,
+	    UNKNOWN_PLATFORM,
+	    INVALID_JWT,
+	    SHOULD_LOGIN,
+
+	    // Transaction
+	    ACCESS_GRANTED,
+	    ACCESS_DENIED,
+	    CAMERA_PERMISSION_NOT_GRANTED,
+
+	    // Authentication
+	    FORGOT_PASSWORD_REQUEST_SENT,
+	    LOGIN_CANCELLED,
+	    LOGIN_FAILED,
+	    LOGOUT,
+
+	    // Guests
+	    INVALID_FIRST_NAME,
+	    INVALID_LAST_NAME,
+	    INVALID_EMAIL_FORMAT,
+	    INVALID_START_DATE,
+	    INVALID_END_DATE,
+	    USER_CANNOT_INVITE,
+
+	    // Geofence
+	    LOCATION_PERMISSION_NOT_GRANTED,
+
+	    //Backend response
+	    SUCCESS,
+	    FAILURE,
+	}
