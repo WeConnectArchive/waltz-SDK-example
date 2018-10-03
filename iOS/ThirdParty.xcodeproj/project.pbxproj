@@ -160,7 +160,7 @@
 				222C7BA71F7BF0170065829B /* Frameworks */,
 				222C7BA81F7BF0170065829B /* Resources */,
 				8A0FC54C2124B7E900C132B9 /* Embed Frameworks */,
-				F69B1B1853C0E4D38ED8E844 /* [CP] Embed Pods Frameworks */,
+				ED7A0567257E84130E476951 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -247,10 +247,12 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		F69B1B1853C0E4D38ED8E844 /* [CP] Embed Pods Frameworks */ = {
+		ED7A0567257E84130E476951 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			inputFileListPaths = (
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-ThirdParty/Pods-ThirdParty-frameworks.sh",
@@ -262,6 +264,8 @@
 				"${PODS_ROOT}/WaltzPBC/WaltzPBC/WaltzPBC.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Freddy.framework",

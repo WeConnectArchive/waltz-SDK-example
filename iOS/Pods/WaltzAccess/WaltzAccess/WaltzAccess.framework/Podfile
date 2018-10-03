@@ -1,7 +1,7 @@
 # Uncomment the next line to define a global platform for your project
 platform :ios, '9.3'
 
-source 'https://github.com/WaltzApp/Podspecs-SNAPSHOT.git'
+source 'https://github.com/WaltzApp/Podspecs.git'
 source 'https://github.com/CocoaPods/Specs.git'
 
 target 'WaltzAccess' do

@@ -1,10 +1,9 @@
-framework module WaltzAccess {
+framework module WaltzAccess {  
   umbrella header "WaltzAccess.h"
 
   export *
   module * { export * }
 }
-
 module WaltzAccess.Swift {
     header "WaltzAccess-Swift.h"
     requires objc
