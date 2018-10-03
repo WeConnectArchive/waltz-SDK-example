@@ -3,6 +3,9 @@
 git clone https://github.com/WaltzApp/waltz-SDK-example
 
 # iOS
+
+IMPORTANT: Need to be sure not to compile for emulator but for a generic device or a real device
+
 cd iOS
 
 pod install
@@ -11,12 +14,13 @@ pod install
 
 1. In your Podfile make sure to add the following sources:
 
-    source 'https://github.com/WaltzApp/Podspecs.git' # To have access to Waltz Pods/Framework
-    source 'https://github.com/CocoaPods/Specs.git'   # To continue to have access to regular Public Pods
+        source 'https://github.com/WaltzApp/Podspecs.git' # To have access to Waltz Pods/Framework
+    
+        source 'https://github.com/CocoaPods/Specs.git'   # To continue to have access to regular Public Pods
 
 2. Add the following dependency:
 
-    pod 'WaltzAccess', :inhibit_warnings => true
+        pod 'WaltzAccess', :inhibit_warnings => true
 
 3. Open the workspace (ThirdParty.xcworkspace)
 
