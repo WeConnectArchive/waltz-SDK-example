@@ -5,7 +5,7 @@ import android.app.Application;
 import com.waltzapp.androidsdk.WaltzSDK;
 
 /**
- * Created by kamalazougagh on 2018-09-28.
+ * The main application.
  */
 public class MyApplication extends Application {
 
@@ -17,8 +17,12 @@ public class MyApplication extends Application {
         WaltzSDK
                 .getInstance()
                 .setContext(this)
-                .setAppUid("___YOUR_APP_UID___")
-                .setLicenseKey("__YOUR_LICENSE_KEY__")
+                .setAppUid(toString(R.string.waltz_app_uid))
+                .setLicenseKey(toString(R.string.waltz_app_key))
                 .init();
+    }
+
+    private String toString(int r) {
+        return getResources().getString(r);
     }
 }
