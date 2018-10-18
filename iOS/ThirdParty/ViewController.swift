@@ -11,10 +11,16 @@ import WaltzAccess
 
 class ViewController: UIViewController, WltzSDKMgrDelegate {
 
+    @IBOutlet weak var licenseTF: UITextField!
+    @IBOutlet weak var appUidTF: UITextField!
     @IBOutlet weak var responseTV: UITextView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
+        view.addGestureRecognizer(tap)
+
         /*
          the third party app is expected to request camera permissions on behalf of the SDK.
          Could be done in the SDK too. Following in the foot steps of on this one.
@@ -24,6 +30,12 @@ class ViewController: UIViewController, WltzSDKMgrDelegate {
         PermissionsChecker.sharedInstance.requestLocationPermission()
         
         WaltzSDKMgr.sharedManager.delegate = self
+    }
+    
+    //Calls this function when the tap is recognized.
+    @objc func dismissKeyboard() {
+        //Causes the view (or one of its embedded text fields) to resign the first responder status.
+        view.endEditing(true)
     }
     
     @IBAction func startTransaction(_ sender: UIButton) {
@@ -112,5 +124,9 @@ class ViewController: UIViewController, WltzSDKMgrDelegate {
         } else {
             
         }
+    }
+    
+    @IBAction func initSDK(_ sender: UIButton) {
+         WaltzSDKMgr.sharedManager.initManager(licenseKey: licenseTF.text!, appUid: appUidTF.text!)
     }
 }
