@@ -29,7 +29,11 @@ pod install
 5. Change the following line with your license and your appUid:
 
         WaltzSDKMgr.sharedManager.initManager(licenseKey: "PUT---YOUR---iOS---LICENSE---HERE", appUid: "PUT---YOUR---VENDOR---UUID---HERE")
-
+	
+	
+6. Make sure to set the architecture flag to "NO" (Build Active Architecture Only) <p align="center">
+  <img src="./ThirdParty - Architecture setup.png" width="800" title="Architecture setup">
+</p>
 
 You can now build and run on a device
 
