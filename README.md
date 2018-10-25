@@ -152,6 +152,16 @@ Internet connection is required for all calls
 	SUCCESS,
 	FAILURE
     } SDKResponseCodes;
+    
+## Additionnal notes
+
+Installing cocoap install:
+https://guides.cocoapods.org/using/getting-started.html
+
+If you want to have a newer version of the SDK run the following command where the "Podfile" is located
+
+	   pod update
+
 
 # Android
 cd Android
