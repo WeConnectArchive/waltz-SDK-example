@@ -35,6 +35,10 @@ pod install
   <img src="./ThirdParty - Architecture setup.png" width="800" title="Architecture setup">
 </p>
 
+6. Make sure to select "Generic iOS Device" and not a emulator <p align="center">
+  <img src="./Generic Device Setup.png" width="400" title="Architecture setup">
+</p>
+
 You can now build and run on a device
 
 
