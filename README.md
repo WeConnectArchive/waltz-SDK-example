@@ -41,6 +41,12 @@ pod install
 
 You can now build and run on a device
 
+## Customize the login visual
+
+You can specify the login visual (background image, logo, background color and primary color). Those value are all option, so if you don't specify any it will take the default (Waltz brand). To do so you need to call the following:
+
+      WaltzSDKMgr.sharedManager.setLoginVisual(backgroundImage: UIImage, logo: UIImage, backgroundColor: UIColor, primaryColor: UIColor)
+
 
 ## Start a transaction
 
