@@ -29,7 +29,15 @@ pod install
 5. Change the following line with your license and your appUid:
 
         WaltzSDKMgr.sharedManager.initManager(licenseKey: "PUT---YOUR---iOS---LICENSE---HERE", appUid: "PUT---YOUR---VENDOR---UUID---HERE")
+	
+	
+6. Make sure to set the architecture flag to "NO" (Build Active Architecture Only) <p align="center">
+  <img src="./ThirdParty - Architecture setup.png" width="800" title="Architecture setup">
+</p>
 
+7. Make sure to select "Generic iOS Device" and not a emulator <p align="center">
+  <img src="./Generic Device Setup.png" width="400" title="Architecture setup">
+</p>
 
 You can now build and run on a device
 
@@ -144,6 +152,16 @@ Internet connection is required for all calls
 	SUCCESS,
 	FAILURE
     } SDKResponseCodes;
+    
+## Additionnal notes
+
+Installing cocoap install:
+https://guides.cocoapods.org/using/getting-started.html
+
+If you want to have a newer version of the SDK run the following command where the "Podfile" is located
+
+	   pod update
+
 
 # Android
 cd Android
