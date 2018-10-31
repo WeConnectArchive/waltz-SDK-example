@@ -127,6 +127,6 @@ class ViewController: UIViewController, WltzSDKMgrDelegate {
     }
     
     @IBAction func initSDK(_ sender: UIButton) {
-         WaltzSDKMgr.sharedManager.initManager(licenseKey: licenseTF.text!, appUid: appUidTF.text!)
+         let _ = WaltzSDKMgr.sharedManager.initManager(licenseKey: licenseTF.text!, appUid: appUidTF.text!)
     }
 }
