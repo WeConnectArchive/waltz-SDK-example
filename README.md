@@ -231,6 +231,21 @@ On your Application class
                 	.setAppUid("___YOUR_APP_UID___")
                 	.setLicenseKey("__YOUR_LICENSE_KEY__")
                 	.init();
+			
+## Customize the login visual
+
+You can specify the login visual (background image, logo and primary color). Those value are all option, so if you don't specify any it will take the default (Waltz brand). To do so you need to call the following:
+
+                // Waltz SDK initialization
+        	WaltzSDK
+                	.getInstance()
+                	.setContext(this)
+                	.setAppUid(getString(R.string.waltz_app_uid))
+                	.setLicenseKey(getString(R.string.waltz_app_key))
+			
+                	.setLoginVisual(R.drawable.login_image, R.drawable.login_logo, Color.RED)
+			
+                	.init();
 
 ## Start a transaction
 
