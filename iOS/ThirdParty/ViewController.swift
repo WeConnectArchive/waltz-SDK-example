@@ -29,6 +29,8 @@ class ViewController: UIViewController, WltzSDKMgrDelegate {
         PermissionsChecker.sharedInstance.requestPermissionForNotifications()
         PermissionsChecker.sharedInstance.requestLocationPermission()
         
+        navigationController?.navigationBar.addGestureRecognizer(tap)
+        
         WaltzSDKMgr.sharedManager.delegate = self
     }
     
