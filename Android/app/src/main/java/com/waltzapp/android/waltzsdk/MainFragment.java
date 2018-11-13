@@ -20,6 +20,7 @@ import com.waltzapp.androidsdk.WaltzSDK;
 import com.waltzapp.androidsdk.guests.Invitation;
 import com.waltzapp.androidsdk.guests.InvitationsCallback;
 import com.waltzapp.androidsdk.guests.SendInvitationCallback;
+import com.waltzapp.androidsdk.pojo.WaltzUserInfos;
 
 import java.lang.reflect.Type;
 import java.util.Calendar;
@@ -57,6 +58,17 @@ public class MainFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 if (mListener != null) mListener.onStartTransaction();
+            }
+        });
+
+        view.findViewById(R.id.user_infos).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                WaltzUserInfos infos = WaltzSDK.getInstance().getUserInfos();
+                Log.d("WaltzUserInfos","User: \n" +
+                        "  - uid  : " + infos.uid  + "\n" +
+                        "  - name : " + infos.name + "\n" +
+                        "  - email: " + infos.email);
             }
         });
 
