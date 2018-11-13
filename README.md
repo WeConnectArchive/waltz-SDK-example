@@ -117,6 +117,26 @@ Internet connection is required for all calls
     
 2 first two have a list of invitations that were made by the user and the last one only the status
 
+## User informations
+
+The user have to be logged in to use it.
+
+1. Get user infos
+   
+        WaltzSDKMgr.sharedManager.getUserInfos()
+
+2. Results are sent in this function:
+
+        func didGetWaltzUserInfoWithErrorCode(_ errorCode: SDKResponseCodes, userInfo: WaltzUserInfos?)
+
+If the status is SUCCESS you will have the user informations inside the WaltzUserInfos that look like that:
+
+	public class WaltzUserInfos {
+	    public let email: String
+	    public let name: String
+	    public let id: UUID
+    	}
+
 ## Waltz error code
 
     typedef enum {
