@@ -131,4 +131,16 @@ class ViewController: UIViewController, WltzSDKMgrDelegate {
     @IBAction func initSDK(_ sender: UIButton) {
          let _ = WaltzSDKMgr.sharedManager.initManager(licenseKey: licenseTF.text!, appUid: appUidTF.text!)
     }
+    
+    @IBAction func getUserInfo(_ sender: Any) {
+        WaltzSDKMgr.sharedManager.getUserInfos()
+    }
+    
+    func didGetWaltzUserInfoWithErrorCode(_ errorCode: SDKResponseCodes, userInfo: WaltzUserInfos?) {
+        print("The Get UserInfo quit with error code \(errorCode)")
+        
+        if errorCode == SUCCESS, let newUserInfo = userInfo {
+            responseTV.text = "Name: \(newUserInfo.name)\nEmail: \(newUserInfo.email)\nID: \(newUserInfo.id.uuidString)"
+        }
+    }
 }
