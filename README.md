@@ -294,6 +294,13 @@ You can specify the login visual (background image, logo and primary color). Tho
 				.commit();
 		}
 
+## User informations
+
+The user have to be logged in to use it.
+
+Get user infos
+   
+        WaltzSDK.getInstance().getUserInfos();
 
 ## Geofencing feature
 1. Start the service
