@@ -115,6 +115,10 @@ On your Application class
 			startFragment(fragment);
 		    }
 
+### Determine if you should login before starting a transaction
+		if (WaltzSDK.getInstance().shouldLogin()) {
+			// start login
+		}
 
 ### Customize the login visual
 
