@@ -2,7 +2,7 @@
 
 These instruction show how to build the **android** example using the Waltz Android SDK.
 Waltz provides to their partners two values that are specific to a Waltz partner and allows use of the SDK.
-This set of values is specific to the platform, so using the **iOS** vales for an **android** project will not work.
+This set of values is specific to the platform, so using the **iOS** values for an **android** project will not work.
 
 These values are specific to a 3rd party application and should be kept private:
 
@@ -14,7 +14,7 @@ These values are specific to a 3rd party application and should be kept private:
 
 Below are the steps required to get build and run the **android** example with your credentials:
 
-1. Enter your license information
+### Enter your license information
 
 Edit your [./app/src/main/res/values/license.xml](./app/src/main/res/values/license.xml) license file and replace the `___YOUR_APP_UID___` and `__YOUR_LICENSE_KEY__` values with those that where provided by Waltz.
 ```xml
@@ -28,7 +28,7 @@ Edit your [./app/src/main/res/values/license.xml](./app/src/main/res/values/lice
 </resources>
 ```
 
-2. Build the sample application
+### Build the sample application
 
 This can be done with either **Android Studio**, or from the command line using grade:
 
@@ -99,25 +99,45 @@ On your Application class
                 	.setAppUid("___YOUR_APP_UID___")
                 	.setLicenseKey("__YOUR_LICENSE_KEY__")
                 	.init();
-			
-## Customize the login visual
+
+## Login
+
+### Start login
+		  
+	  	public void onLogin() {
+			WaltzLogInFragment fragment = WaltzLogInFragment.newInstance(new WaltzCallback() {
+			    @Override
+			    public void onTransactionDone(WaltzCode waltzCode) {
+				Toast.makeText(MainActivity.this, "Status code: " + waltzCode, Toast.LENGTH_SHORT).show();
+				getSupportFragmentManager().popBackStack();
+			    }
+			});
+			startFragment(fragment);
+		    }
+
+
+### Customize the login visual
 
 You can specify the login visual (background image, logo and primary color). Those value are all option, so if you don't specify any it will take the default (Waltz brand). To do so you need to call the following:
 
-                // Waltz SDK initialization
-        	WaltzSDK
-                	.getInstance()
-                	.setContext(this)
-                	.setAppUid(getString(R.string.waltz_app_uid))
-                	.setLicenseKey(getString(R.string.waltz_app_key))
-			
-                	.setLoginVisual(R.drawable.login_image, R.drawable.login_logo, Color.RED)
-			
-                	.init();
+                public void onLogin() {
+			WaltzLogInFragment fragment = WaltzLogInFragment.newInstance(new WaltzCallback() {
+			    @Override
+			    public void onTransactionDone(WaltzCode waltzCode) {
+				Toast.makeText(MainActivity.this, "Status code: " + waltzCode, Toast.LENGTH_SHORT).show();
+				getSupportFragmentManager().popBackStack();
+			    }
+			});
+
+			// Custom visual
+			fragment.setVisual(R.drawable.login_image, R.drawable.login_logo, Color.RED);
+
+			startFragment(fragment);
+		    }
 
 ## Start a transaction
 
-1. On your Activity or fragment
+### On your Activity or fragment
 
 		public void onStartTransaction() {
 			WaltzTransactionFragment fragment = WaltzTransactionFragment.newInstance(new WaltzCallback() {
@@ -151,7 +171,7 @@ Get user infos
         WaltzSDK.getInstance().getUserInfos();
 
 ## Geofencing feature
-1. Start the service
+### Start the service
 			
 		WaltzSDK
 			.getInstance()
@@ -163,7 +183,7 @@ Get user infos
 			})
 			.startGeofencing();
 
-2. Stop the service
+### Stop the service
 
 		WaltzSDK
 			.getInstance()
@@ -175,7 +195,7 @@ Get user infos
 			})
 			.stopGeofencing();
 
-3. Customize notification - Call setter when initializing the SDK
+### Customize notification - Call setter when initializing the SDK
 
         // Waltz SDK initialization
         WaltzSDK
@@ -193,12 +213,12 @@ Get user infos
 
 
 ## Guest feature
-1. Send an invitation
+### Send an invitation
 
-		String firstName = "Android SDK first name";
-		String lastName = "Android SDK last name";
-		String email = "androidsdk@example.com";
-		String phoneNumber = "5145457878"; // Optional
+		String firstName = "My first name";
+		String lastName = "My last name";
+		String email = "myemail@example.com";
+		String phoneNumber = "My phone"; // Optional
 
 		Calendar calendar = Calendar.getInstance();
 		calendar.setTime(new Date());
@@ -217,7 +237,7 @@ Get user infos
 			    }
 			});
 
-2. My Guests (invitations sent)
+### My Guests (invitations sent)
 
 		WaltzSDK
 			.getInstance()
@@ -233,7 +253,7 @@ Get user infos
 			}
 		});
 
-3. My Invitations (invitations received)
+### My Invitations (invitations received)
 
 		WaltzSDK
 			.getInstance()
