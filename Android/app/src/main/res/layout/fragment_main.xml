@@ -3,21 +3,43 @@
 	android:layout_width="match_parent"
 	android:layout_height="match_parent"
 	>
+	
 	<LinearLayout
 		android:layout_width="match_parent"
 		android:layout_height="wrap_content"
-		android:gravity="center"
 		android:orientation="vertical"
 		>
+		
+		<Button
+			android:id="@+id/camera_permission"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:layout_marginBottom="4dp"
+			android:layout_marginEnd="32dp"
+			android:layout_marginStart="32dp"
+			android:layout_marginTop="4dp"
+			android:text="grant camera permission"
+			/>
+		
+		<Button
+			android:id="@+id/login"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:layout_marginBottom="4dp"
+			android:layout_marginEnd="32dp"
+			android:layout_marginStart="32dp"
+			android:layout_marginTop="4dp"
+			android:text="login"
+			/>
 		
 		<Button
 			android:id="@+id/start_transaction"
 			android:layout_width="match_parent"
 			android:layout_height="wrap_content"
-			android:layout_marginBottom="8dp"
-			android:layout_marginEnd="64dp"
-			android:layout_marginStart="64dp"
-			android:layout_marginTop="8dp"
+			android:layout_marginBottom="4dp"
+			android:layout_marginEnd="32dp"
+			android:layout_marginStart="32dp"
+			android:layout_marginTop="4dp"
 			android:text="Start Transaction"
 			/>
 		
@@ -25,21 +47,32 @@
 			android:id="@+id/user_infos"
 			android:layout_width="match_parent"
 			android:layout_height="wrap_content"
-			android:layout_marginBottom="8dp"
-			android:layout_marginEnd="64dp"
-			android:layout_marginStart="64dp"
-			android:layout_marginTop="8dp"
+			android:layout_marginBottom="4dp"
+			android:layout_marginEnd="32dp"
+			android:layout_marginStart="32dp"
+			android:layout_marginTop="4dp"
 			android:text="User infos"
+			/>
+		
+		<TextView
+			android:id="@+id/user_infos_result"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:layout_marginBottom="4dp"
+			android:layout_marginEnd="32dp"
+			android:layout_marginStart="32dp"
+			android:layout_marginTop="4dp"
+			android:visibility="gone"
 			/>
 		
 		<Button
 			android:id="@+id/start_geofence"
 			android:layout_width="match_parent"
 			android:layout_height="wrap_content"
-			android:layout_marginBottom="8dp"
-			android:layout_marginEnd="64dp"
-			android:layout_marginStart="64dp"
-			android:layout_marginTop="8dp"
+			android:layout_marginBottom="4dp"
+			android:layout_marginEnd="32dp"
+			android:layout_marginStart="32dp"
+			android:layout_marginTop="4dp"
 			android:text="start geofence"
 			/>
 		
@@ -47,10 +80,10 @@
 			android:id="@+id/stop_geofence"
 			android:layout_width="match_parent"
 			android:layout_height="wrap_content"
-			android:layout_marginBottom="8dp"
-			android:layout_marginEnd="64dp"
-			android:layout_marginStart="64dp"
-			android:layout_marginTop="8dp"
+			android:layout_marginBottom="4dp"
+			android:layout_marginEnd="32dp"
+			android:layout_marginStart="32dp"
+			android:layout_marginTop="4dp"
 			android:text="stop geofence"
 			/>
 		
@@ -58,10 +91,10 @@
 			android:id="@+id/send_invitation"
 			android:layout_width="match_parent"
 			android:layout_height="wrap_content"
-			android:layout_marginBottom="8dp"
-			android:layout_marginEnd="64dp"
-			android:layout_marginStart="64dp"
-			android:layout_marginTop="8dp"
+			android:layout_marginBottom="4dp"
+			android:layout_marginEnd="32dp"
+			android:layout_marginStart="32dp"
+			android:layout_marginTop="4dp"
 			android:text="Send invitation"
 			/>
 		
@@ -69,10 +102,10 @@
 			android:id="@+id/my_guests"
 			android:layout_width="match_parent"
 			android:layout_height="wrap_content"
-			android:layout_marginBottom="8dp"
-			android:layout_marginEnd="64dp"
-			android:layout_marginStart="64dp"
-			android:layout_marginTop="8dp"
+			android:layout_marginBottom="4dp"
+			android:layout_marginEnd="32dp"
+			android:layout_marginStart="32dp"
+			android:layout_marginTop="4dp"
 			android:text="My Guests"
 			/>
 		
@@ -80,10 +113,10 @@
 			android:id="@+id/my_invitations"
 			android:layout_width="match_parent"
 			android:layout_height="wrap_content"
-			android:layout_marginBottom="8dp"
-			android:layout_marginEnd="64dp"
-			android:layout_marginStart="64dp"
-			android:layout_marginTop="8dp"
+			android:layout_marginBottom="4dp"
+			android:layout_marginEnd="32dp"
+			android:layout_marginStart="32dp"
+			android:layout_marginTop="4dp"
 			android:text="My invitations"
 			/>
 		
@@ -91,20 +124,21 @@
 			android:id="@+id/invitations_result"
 			android:layout_width="match_parent"
 			android:layout_height="wrap_content"
-			android:layout_marginBottom="8dp"
-			android:layout_marginEnd="64dp"
-			android:layout_marginStart="64dp"
-			android:layout_marginTop="8dp"
+			android:layout_marginBottom="4dp"
+			android:layout_marginEnd="32dp"
+			android:layout_marginStart="32dp"
+			android:layout_marginTop="4dp"
+			android:visibility="gone"
 			/>
 		
 		<Button
 			android:id="@+id/clear"
 			android:layout_width="match_parent"
 			android:layout_height="wrap_content"
-			android:layout_marginBottom="8dp"
-			android:layout_marginEnd="64dp"
-			android:layout_marginStart="64dp"
-			android:layout_marginTop="8dp"
+			android:layout_marginBottom="4dp"
+			android:layout_marginEnd="32dp"
+			android:layout_marginStart="32dp"
+			android:layout_marginTop="4dp"
 			android:text="Clear data"
 			/>
 	

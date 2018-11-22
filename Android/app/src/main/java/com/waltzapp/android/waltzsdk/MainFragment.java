@@ -1,10 +1,13 @@
 package com.waltzapp.android.waltzsdk;
 
+import android.Manifest;
 import android.content.Context;
+import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.support.v4.content.ContextCompat;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -31,8 +34,9 @@ import java.util.List;
  * Created by kamalazougagh on 2018-09-28.
  */
 public class MainFragment extends Fragment {
+
     private Listener mListener;
-    private TextView mInvitationsResult;
+    private TextView mInvitationsResult, mUserInfosResult;
 
 
     @Override
@@ -52,7 +56,27 @@ public class MainFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
 
         mInvitationsResult = view.findViewById(R.id.invitations_result);
+        mUserInfosResult = view.findViewById(R.id.user_infos_result);
 
+
+        view.findViewById(R.id.camera_permission).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (ContextCompat.checkSelfPermission(getContext(), Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED) {
+                    requestPermissions( new String[]{Manifest.permission.CAMERA}, 1);
+                }
+                else {
+                    Toast.makeText(getContext(), "Camera Permission Granted", Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
+
+        view.findViewById(R.id.login).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (mListener != null) mListener.onLogin();
+            }
+        });
 
         view.findViewById(R.id.start_transaction).setOnClickListener(new View.OnClickListener() {
             @Override
@@ -65,10 +89,11 @@ public class MainFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 WaltzUserInfos infos = WaltzSDK.getInstance().getUserInfos();
-                Log.d("WaltzUserInfos","User: \n" +
-                        "  - uid  : " + infos.uid  + "\n" +
-                        "  - name : " + infos.name + "\n" +
-                        "  - email: " + infos.email);
+                String result = "Name  : " + infos.name + "\n" +
+                        "Email : " + infos.email + "\n" +
+                        "Uid   : " + infos.uid;
+                mUserInfosResult.setText(result);
+                mUserInfosResult.setVisibility(View.VISIBLE);
             }
         });
 
@@ -105,8 +130,8 @@ public class MainFragment extends Fragment {
         view.findViewById(R.id.send_invitation).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String firstName = "Android SDK first name";
-                String lastName = "Android SDK last name";
+                String firstName = "A-SDK fName";
+                String lastName = "A-SDK lName";
                 String email = "androidsdk@example.com";
                 String phoneNumber = "5145457878";
 
@@ -142,7 +167,9 @@ public class MainFragment extends Fragment {
                             Type listOfTestObject = new TypeToken<List<Invitation>>(){}.getType();
                             String s = new Gson().toJson(invitationList, listOfTestObject);
                             mInvitationsResult.setText(s);
-                        }else Log.d("LIB", "fetchMyGuests - onInvitationsReceived() code : " + code );
+                            mInvitationsResult.setVisibility(View.VISIBLE);
+                        }
+                        else Log.d("LIB", "fetchMyGuests - onInvitationsReceived() code : " + code );
                     }
                 });
             }
@@ -160,6 +187,7 @@ public class MainFragment extends Fragment {
                             Type listOfTestObject = new TypeToken<List<Invitation>>(){}.getType();
                             String s = new Gson().toJson(invitationList, listOfTestObject);
                             mInvitationsResult.setText(s);
+                            mInvitationsResult.setVisibility(View.VISIBLE);
                         }
                         else Log.d("LIB", "fetchMyInvitations - onInvitationsReceived() code : " + code);
                     }
@@ -184,6 +212,7 @@ public class MainFragment extends Fragment {
     }
 
     public interface Listener {
+        void onLogin();
         void onStartTransaction();
     }
 }
