@@ -45,6 +45,11 @@ class ViewController: UIViewController, WltzSDKMgrDelegate {
          The SDK needs a valid key to start the transaction.
          Please contact the Waltz team to have one.
          */
+        
+        if let tabBarVC = parent as? UITabBarController {
+            tabBarVC.selectedIndex = 1
+        }
+        
         WaltzSDKMgr.sharedManager.beginTransaction()
     }
     
