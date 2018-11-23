@@ -47,14 +47,26 @@ You can specify the login visual (background image, logo, background color and p
 
       WaltzSDKMgr.sharedManager.setLoginVisual(backgroundImage: UIImage, logo: UIImage, backgroundColor: UIColor, primaryColor: UIColor)
 
+## Log the user In
+
+Internet connection is required
+
+To request the login flow you need to call the following function:
+
+        WaltzSDKMgr.sharedManager.logIn()
+	
+The result will be send in the following callback (WltzSDKMgrDelegate):
+
+            func didFinishWaltzLogin(_ errorCode: SDKResponseCodes)
 
 ## Start a transaction
 
+The user have to be logged in to use it.
 Internet connection is required
 
 You need to request the camera permission
 
-1. You need to call the fallowing function:
+1. You need to call the following function:
 
         WaltzSDKMgr.sharedManager.beginTransaction()
 
