@@ -94,9 +94,16 @@
                                     <action selector="initSDK:" destination="BYZ-38-t0r" eventType="touchUpInside" id="yBL-Qu-fFW"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mbx-JO-J9t">
-                                <rect key="frame" x="249" y="423" width="110" height="36"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="44b-kO-ikd">
+                                <rect key="frame" x="35" y="317" width="49" height="36"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="Login"/>
+                                <connections>
+                                    <action selector="Login:" destination="BYZ-38-t0r" eventType="touchUpInside" id="uQd-7c-NcS"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mbx-JO-J9t">
+                                <rect key="frame" x="265" y="317" width="110" height="36"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <state key="normal" title="Get UserInfo"/>
                                 <connections>
@@ -120,7 +127,9 @@
                             <constraint firstItem="G5L-hA-Ufe" firstAttribute="top" secondItem="CZ0-5v-SkV" secondAttribute="bottom" id="OU6-za-cVV"/>
                             <constraint firstItem="Eme-7v-LeR" firstAttribute="top" secondItem="4Rl-M3-UkX" secondAttribute="bottom" id="OkT-5u-RhK"/>
                             <constraint firstItem="McL-7T-5w6" firstAttribute="top" secondItem="G5L-hA-Ufe" secondAttribute="bottom" constant="10" id="V4w-Tw-sgK"/>
+                            <constraint firstItem="44b-kO-ikd" firstAttribute="top" secondItem="4Rl-M3-UkX" secondAttribute="top" id="Vod-2G-glb"/>
                             <constraint firstItem="McL-7T-5w6" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="WwT-Dd-bUQ"/>
+                            <constraint firstItem="44b-kO-ikd" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="35" id="bkP-Ab-Iap"/>
                             <constraint firstItem="9O4-dZ-Qnw" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="dEG-6G-dXb"/>
                             <constraint firstItem="Eme-7v-LeR" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="epL-cp-1IO"/>
                             <constraint firstItem="t7z-Ee-5qF" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="fcX-JS-MAe"/>
@@ -129,7 +138,9 @@
                             <constraint firstItem="aai-Gb-3pH" firstAttribute="top" secondItem="hyA-ML-PoM" secondAttribute="bottom" id="nfI-Ad-mEK"/>
                             <constraint firstItem="hyA-ML-PoM" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="rhh-gG-vPI"/>
                             <constraint firstItem="t7z-Ee-5qF" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="u2q-O0-Rga"/>
+                            <constraint firstItem="mbx-JO-J9t" firstAttribute="top" secondItem="4Rl-M3-UkX" secondAttribute="top" id="ydE-P4-75F"/>
                             <constraint firstAttribute="trailing" secondItem="t7z-Ee-5qF" secondAttribute="trailing" constant="20" id="zRj-PO-v3M"/>
+                            <constraint firstAttribute="trailing" secondItem="mbx-JO-J9t" secondAttribute="trailing" id="zyb-ss-urq"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Menu" id="mbV-2T-KcD"/>

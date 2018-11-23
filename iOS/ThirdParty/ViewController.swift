@@ -40,6 +40,14 @@ class ViewController: UIViewController, WltzSDKMgrDelegate {
         view.endEditing(true)
     }
     
+    @IBAction func Login(_ sender: UIButton) {
+        if let tabBarVC = parent as? UITabBarController {
+            tabBarVC.selectedIndex = 1
+        }
+        
+        WaltzSDKMgr.sharedManager.logIn()
+    }
+    
     @IBAction func startTransaction(_ sender: UIButton) {
         /*
          The SDK needs a valid key to start the transaction.
@@ -85,6 +93,14 @@ class ViewController: UIViewController, WltzSDKMgrDelegate {
         let startDate = Date()
         let endDate = Date(timeIntervalSinceNow: 30*60)
         WaltzSDKMgr.sharedManager.sendInvitation(firstName: firstName, lastName: lastName, email: email, phoneNumber: phoneNumber, startDate: startDate, endDate: endDate)
+    }
+    
+    func didFinishWaltzLogin(_ errorCode: SDKResponseCodes) {
+        if let tabBarVC = parent as? UITabBarController {
+            tabBarVC.selectedIndex = 0
+        }
+        
+        print("The Login quit with error code \(errorCode)")
     }
     
     func didFinishWaltzTransactionWithErrorCode(_ errorCode: SDKResponseCodes) {
