@@ -189,3 +189,4 @@ If you want to have a newer version of the SDK run the following command where t
 	   pod update
 
 
+SDK supports TabBarViewController and NavigationController. The SDK UI will be embedded automatically in its parent. To see both working just change the "Entry Point" in the example storyboard.
