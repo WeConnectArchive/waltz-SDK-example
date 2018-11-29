@@ -24,6 +24,7 @@ typedef enum {
     UNKNOWN_PLATFORM,
     INVALID_JWT,
     SHOULD_LOGIN,
+    FEATURE_DISABLE,
     
     // Transaction
     ACCESS_GRANTED,
