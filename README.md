@@ -153,42 +153,43 @@ If the status is SUCCESS you will have the user informations inside the WaltzUse
 
     typedef enum {
     
-	// SDK validation
-	APP_UID_NOT_EXIST,
-	LICENSE_KEY_NOT_EXIST,
-	LICENSE_KEY_IS_EXPIRED,
-	SDK_VERSION_IS_EXPIRED,
-	NO_INTERNET_CONNECTION,
-	UNKNOWN_PLATFORM,
-	INVALID_JWT,
-	SHOULD_LOGIN,
-
-	// Transaction
-	ACCESS_GRANTED,
-	ACCESS_DENIED,
-	CAMERA_PERSMISSION_NOT_GRANTED,
-
-	// Authentification
-	FORGOT_PASSWORD_REQUEST_SEND,
-	LOGIN_CANCELLED,
-	LOGIN_FAILED,
-	LOGOUT,
-
-	// Guests
-	INVALID_FIRST_NAME,
-	INVALID_LAST_NAME,
-	INVALID_EMAIL_FORMAT,
-	INVALID_START_DATE,
-	INVALID_END_DATE,
-	USER_CANNOT_INVITE,
-
-	// Geofence
-	LOCATION_PERSMISSION_NOT_GRANTED,
-	NOTIFICATION_PERSMISSION_NOT_GRANTED,
-
-	// Backend response
-	SUCCESS,
-	FAILURE
+        // SDK validation
+        APP_UID_NOT_EXIST,
+        LICENSE_KEY_NOT_EXIST,
+        LICENSE_KEY_IS_EXPIRED,
+        SDK_VERSION_IS_EXPIRED,
+        NO_INTERNET_CONNECTION,
+        UNKNOWN_PLATFORM,
+        INVALID_JWT,
+        SHOULD_LOGIN,
+        FEATURE_DISABLE,
+    
+        // Transaction
+        ACCESS_GRANTED,
+        ACCESS_DENIED,
+        CAMERA_PERSMISSION_NOT_GRANTED,
+    
+        // Authentification
+        FORGOT_PASSWORD_REQUEST_SEND,
+        LOGIN_CANCELLED,
+        LOGIN_FAILED,
+        LOGOUT,
+    
+        // Guests
+        INVALID_FIRST_NAME,
+        INVALID_LAST_NAME,
+        INVALID_EMAIL_FORMAT,
+        INVALID_START_DATE,
+        INVALID_END_DATE,
+        USER_CANNOT_INVITE,
+    
+        // Geofence
+        LOCATION_PERSMISSION_NOT_GRANTED,
+        NOTIFICATION_PERSMISSION_NOT_GRANTED,
+    
+        // Backend response
+        SUCCESS,
+        FAILURE
     } SDKResponseCodes;
     
 ## Additionnal notes
