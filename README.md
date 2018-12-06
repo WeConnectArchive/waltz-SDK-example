@@ -158,6 +158,7 @@ If the status is SUCCESS you will have the user informations inside the WaltzUse
         LICENSE_KEY_NOT_EXIST,
         LICENSE_KEY_IS_EXPIRED,
         SDK_VERSION_IS_EXPIRED,
+        SDK_NOT_INITIALIZED,
         NO_INTERNET_CONNECTION,
         UNKNOWN_PLATFORM,
         INVALID_JWT,
