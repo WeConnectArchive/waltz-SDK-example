@@ -28,5 +28,8 @@ dependencies {
     implementation 'com.android.support:appcompat-v7:28.0.0'
 
     // Waltz
-    implementation 'com.waltzapp.transaction:waltz-sdk:1.3.0'
+    implementation 'com.waltzapp.transaction:waltz-sdk:2.0.0'
 }
+
+// ADD THIS AT THE BOTTOM
+apply plugin: 'com.google.gms.google-services'

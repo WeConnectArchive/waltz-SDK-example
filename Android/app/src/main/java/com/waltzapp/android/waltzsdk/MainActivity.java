@@ -4,14 +4,17 @@ import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v7.app.AppCompatActivity;
-import android.widget.Toast;
 
-import com.waltzapp.androidsdk.WaltzCallback;
 import com.waltzapp.androidsdk.WaltzCode;
 import com.waltzapp.androidsdk.WaltzLogInFragment;
 import com.waltzapp.androidsdk.WaltzTransactionFragment;
+import com.waltzapp.androidsdk.callback.LogInCallback;
+import com.waltzapp.androidsdk.callback.TransactionCallback;
+import com.waltzapp.androidsdk.pojo.DDInfos;
 
 public class MainActivity extends AppCompatActivity implements MainFragment.Listener {
+
+    private MyDialog mMyDialog;
 
 
     @Override
@@ -29,11 +32,10 @@ public class MainActivity extends AppCompatActivity implements MainFragment.List
 
     @Override
     public void onLogin() {
-        WaltzLogInFragment fragment = WaltzLogInFragment.newInstance(new WaltzCallback() {
+        WaltzLogInFragment fragment = WaltzLogInFragment.newInstance(new LogInCallback() {
             @Override
-            public void onTransactionDone(WaltzCode waltzCode) {
-                Toast.makeText(MainActivity.this, "Status code: " + waltzCode, Toast.LENGTH_SHORT).show();
-                getSupportFragmentManager().popBackStack();
+            public void onComplete(WaltzCode waltzCode) {
+                showDialog(waltzCode, null);
             }
         });
 
@@ -45,13 +47,18 @@ public class MainActivity extends AppCompatActivity implements MainFragment.List
 
     @Override
     public void onStartTransaction() {
-        WaltzTransactionFragment fragment = WaltzTransactionFragment.newInstance(new WaltzCallback() {
+        WaltzTransactionFragment fragment = WaltzTransactionFragment.newInstance(new TransactionCallback() {
             @Override
             public void onTransactionDone(WaltzCode waltzCode) {
-                Toast.makeText(MainActivity.this, "Status code: " + waltzCode, Toast.LENGTH_SHORT).show();
-                getSupportFragmentManager().popBackStack();
+                showDialog(waltzCode, null);
+            }
+
+            @Override
+            public void onTransactionDone(WaltzCode waltzCode, DDInfos ddInfos) {
+                showDialog(waltzCode, ddInfos);
             }
         });
+
         startFragment(fragment);
     }
 
@@ -61,5 +68,25 @@ public class MainActivity extends AppCompatActivity implements MainFragment.List
                 .replace(R.id.main_content, fragment)
                 .addToBackStack(null)
                 .commit();
+    }
+
+
+    private void showDialog(WaltzCode waltzCode, DDInfos ddInfos) {
+        if (mMyDialog == null) {
+            mMyDialog = MyDialog
+                    .with(waltzCode)
+                    .setListener(new MyDialog.Listener() {
+                        @Override
+                        public void onDismiss() {
+                            getSupportFragmentManager().popBackStack();
+                            mMyDialog = null;
+                        }
+                    })
+                    .setDDInfos(ddInfos);
+            mMyDialog.show(getSupportFragmentManager(), "dialog");
+        }
+        else if (ddInfos != null) {
+            mMyDialog.refreshDDInfos(ddInfos);
+        }
     }
 }
