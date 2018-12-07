@@ -273,6 +273,65 @@ Get user infos
 			}
 		});
 
+## Destination dispatch
+
+1. In order to receive the destination dispatch informations, you should create a Firebase project
+https://firebase.google.com/docs/android/setup
+
+2. Then set up Firebase Cloud Messaging
+https://firebase.google.com/docs/cloud-messaging/android/client
+
+3. Send to Waltz your FCM Server Key at sdksupport@waltzapp.com
+
+3. In your Application class, get the Fcm Token and and send it to the WaltzSDK
+
+        FirebaseInstanceId.getInstance().getInstanceId()
+                .addOnCompleteListener(new OnCompleteListener<InstanceIdResult>() {
+                    @Override
+                    public void onComplete(@NonNull Task<InstanceIdResult> task) {
+                        if (task.isSuccessful()) {
+                            String token = task.getResult().getToken();
+                            Log.d("Token", "Firebase Token:\n" + token);
+                            WaltzSDK.getInstance().updateFcmToken(token);
+                        }
+                    }
+                });
+
+4. Create a class that extends WaltzMessagingService. 
+The method onNewMessageReceived() returns to your app Fcm that not belongs to WaltzSDK.
+
+        public class MyMessagingService extends WaltzMessagingService {
+        
+            @Override
+            protected void onNewMessageReceived(RemoteMessage remoteMessage) {
+                super.onNewMessageReceived(remoteMessage);
+                Log.d("Firebase", "onNewMessageReceived \n" + remoteMessage.getData().toString());
+            }
+        }
+
+5. Declare the service in the AndroidManifest.xml
+
+		<!--Waltz Messaging service-->
+		<service android:name=".firebase.MyMessagingService">
+			<intent-filter>
+				<action android:name="com.google.firebase.MESSAGING_EVENT" />
+			</intent-filter>
+		</service>
+
+6. During the transaction, if the destination dispatch informations is known, you will receive a DDInfos object that contains two String values (elevator and floor)
+
+        WaltzTransactionFragment fragment = WaltzTransactionFragment.newInstance(new TransactionCallback() {
+            @Override
+            public void onTransactionDone(WaltzCode waltzCode) {
+                showDialog(waltzCode, null);
+            }
+
+            @Override
+            public void onTransactionDone(WaltzCode waltzCode, DDInfos ddInfos) {
+                showDialog(waltzCode, ddInfos);
+            }
+        });
+
 ## Waltz error code
 	public enum WaltzCode {
 

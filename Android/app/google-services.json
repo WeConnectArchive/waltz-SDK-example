@@ -1,0 +1,93 @@
+{
+  "project_info": {
+    "project_number": "698662071946",
+    "firebase_url": "https://third-app-firebase.firebaseio.com",
+    "project_id": "third-app-firebase",
+    "storage_bucket": "third-app-firebase.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:698662071946:android:a3ba5a4975880b7b",
+        "android_client_info": {
+          "package_name": "com.waltzapp.android.waltzsdk"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "698662071946-qoksmm4bjfnnfav7v807rutduue6aavb.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBH0GQjMzeEhwRMzTOX0xI4utRn2vCuzRE"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:698662071946:android:85ee782ed8d46f55",
+        "android_client_info": {
+          "package_name": "com.waltzapp.testsdk"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "698662071946-ggnh9bqbal3l917lkc7ea9kc68m6tduo.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.waltzapp.testsdk",
+            "certificate_hash": "a574fabb822f99a1a679382e35ab0dda712ecc56"
+          }
+        },
+        {
+          "client_id": "698662071946-qoksmm4bjfnnfav7v807rutduue6aavb.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBH0GQjMzeEhwRMzTOX0xI4utRn2vCuzRE"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "698662071946-qoksmm4bjfnnfav7v807rutduue6aavb.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "698662071946-faj0tt250r5cm137d2ankind90kgv2o8.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.waltz.iOS.SDKExample"
+              }
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

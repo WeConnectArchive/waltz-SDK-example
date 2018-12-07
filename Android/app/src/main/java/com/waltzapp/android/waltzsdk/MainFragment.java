@@ -17,9 +17,9 @@ import android.widget.Toast;
 
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
-import com.waltzapp.androidsdk.WaltzCallback;
 import com.waltzapp.androidsdk.WaltzCode;
 import com.waltzapp.androidsdk.WaltzSDK;
+import com.waltzapp.androidsdk.callback.WaltzCallback;
 import com.waltzapp.androidsdk.guests.Invitation;
 import com.waltzapp.androidsdk.guests.InvitationsCallback;
 import com.waltzapp.androidsdk.guests.SendInvitationCallback;
