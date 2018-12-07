@@ -21,6 +21,7 @@
 		8A0FC5192123244200C132B9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A0FC5182123244200C132B9 /* AppDelegate.swift */; };
 		8A0FC51B212324BE00C132B9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A0FC51A212324BE00C132B9 /* ViewController.swift */; };
 		8AB7F6C721138E85001F4970 /* libiconv.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 2283EFAA1F7D1A010068925B /* libiconv.tbd */; };
+		8ABC902B21BACD4B0024DE5C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8ABC902A21BACD4B0024DE5C /* GoogleService-Info.plist */; };
 		8AD865C22135BC49008696CA /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 8AD865C12135BC49008696CA /* Podfile */; };
 /* End PBXBuildFile section */
 
@@ -58,6 +59,7 @@
 		8A0FC5182123244200C132B9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8A0FC51A212324BE00C132B9 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		8A1C721921498EF00004635C /* ThirdParty.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ThirdParty.entitlements; sourceTree = "<group>"; };
+		8ABC902A21BACD4B0024DE5C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		8AD865C12135BC49008696CA /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 /* End PBXFileReference section */
 
@@ -117,6 +119,7 @@
 		222C7BAD1F7BF0170065829B /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				8ABC902A21BACD4B0024DE5C /* GoogleService-Info.plist */,
 				8AD865C12135BC49008696CA /* Podfile */,
 				8A0FC5172123244100C132B9 /* ThirdParty-Bridging-Header.h */,
 			);
@@ -221,6 +224,7 @@
 			files = (
 				222C7BBD1F7BF0170065829B /* LaunchScreen.storyboard in Resources */,
 				222C7BBA1F7BF0170065829B /* Assets.xcassets in Resources */,
+				8ABC902B21BACD4B0024DE5C /* GoogleService-Info.plist in Resources */,
 				8AD865C22135BC49008696CA /* Podfile in Resources */,
 				222C7BB81F7BF0170065829B /* Main.storyboard in Resources */,
 			);
@@ -258,10 +262,13 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-ThirdParty/Pods-ThirdParty-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/Freddy/Freddy.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
 				"${BUILT_PRODUCTS_DIR}/JWTDecode/JWTDecode.framework",
+				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
 				"${BUILT_PRODUCTS_DIR}/UICKeyChainStore/UICKeyChainStore.framework",
 				"${PODS_ROOT}/WaltzAccess/WaltzAccess/WaltzAccess.framework",
 				"${PODS_ROOT}/WaltzPBC/WaltzPBC/WaltzPBC.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
@@ -269,10 +276,13 @@
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Freddy.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/JWTDecode.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/UICKeyChainStore.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/WaltzAccess.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/WaltzPBC.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;

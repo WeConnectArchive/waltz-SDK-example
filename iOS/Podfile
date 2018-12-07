@@ -12,4 +12,7 @@ target 'ThirdParty' do
   use_frameworks!
 
   pod 'WaltzAccess', :inhibit_warnings => true
+  
+  pod 'Firebase/Core', :inhibit_warnings => true
+  pod 'Firebase/Messaging', :inhibit_warnings => true
 end

@@ -135,6 +135,14 @@ class ViewController: UIViewController, WltzSDKMgrDelegate {
         }
     }
     
+    func didUpdateWaltzFCMTokenWithErrorCode(_ errorCode: SDKResponseCodes) {
+        print("The Update FCM token quit with error code \(errorCode)")
+    }
+    
+    func didGetWaltzDDInfos(_ ddInfos: DDInfos) {
+        print("We have received the DD infos elevator: \(ddInfos.elevator) floor: \(ddInfos.floor)")
+    }
+    
     func requestCameraPermission() {
         if AVCaptureDevice.responds(to: #selector(AVCaptureDevice.requestAccess(for:completionHandler:))) {
             AVCaptureDevice.requestAccess(for: .video, completionHandler: { granted in
