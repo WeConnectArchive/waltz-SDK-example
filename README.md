@@ -148,7 +148,80 @@ If the status is SUCCESS you will have the user informations inside the WaltzUse
 	    public let name: String
 	    public let id: UUID
     	}
+	
+## Destination dispatch
+In order to receive the destination dispatch informations, you should create a Firebase project https://firebase.google.com/docs/ios/setup
 
+Then set up Firebase Cloud Messaging https://firebase.google.com/docs/cloud-messaging/ios/client
+
+Send to Waltz your FCM Server Key at sdksupport@waltzapp.com
+
+1. In your AppDelegate class, herit from MessagingDelegate and UNUserNotificationCenterDelegate
+
+        import Firebase
+        import FirebaseMessaging
+        import UserNotifications
+
+        class AppDelegate: UIResponder, UIApplicationDelegate, MessagingDelegate, UNUserNotificationCenterDelegate
+	 
+2. In the didFinishLaunchingWithOptions configure Firebase, register delegate
+
+        func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
+            FirebaseApp.configure()
+            Messaging.messaging().delegate = self
+        }
+	
+3. Make sure to request for notification permission
+
+        if #available(iOS 10.0, *) {
+            // For iOS 10 display notification (sent via APNS)
+            UNUserNotificationCenter.current().delegate = self
+            
+            let authOptions: UNAuthorizationOptions = [.alert, .badge, .sound]
+            UNUserNotificationCenter.current().requestAuthorization(
+                options: authOptions,
+                completionHandler: {_, _ in })
+        } else {
+            let settings: UIUserNotificationSettings =
+                UIUserNotificationSettings(types: [.alert, .badge, .sound], categories: nil)
+            application.registerUserNotificationSettings(settings)
+        }
+        
+        application.registerForRemoteNotifications()
+	
+4. Send any new FCM token to the SDK by calling this delegate function in the AppDelegate
+
+        // MARK: FCM METHODS
+        func messaging(_ messaging: Messaging, didReceiveRegistrationToken fcmToken: String) {
+        
+            WaltzSDKMgr.sharedManager.updateFcmToken(fcmToken)
+            Messaging.messaging().shouldEstablishDirectChannel = true
+        }
+	
+5. Send the notification data (userInfo) to the SDK in order for it to validate if it belongs to Waltz or not
+
+        // MARK: REMOTE NOTIFICATION METHODS
+        func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable : Any], fetchCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
+            if #available(iOS 10.0, *) {
+                if !WaltzSDKMgr.sharedManager.onReceiveNotification(userInfo) {
+                    // This is a notification that belongs to your applicaiton
+                }
+            } else {
+                // Fallback on earlier versions
+            }
+        }
+The onReceiveNotification function returns true if it was handle by the SDK and false if it is for you to handle
+
+5. SDK Callback for FCM update and for DDInfos. You should receive those callback from WltzSDKMgrDelegate if you registered your FCM and if there is any DDInfos (Destination Dispatch informations) available for you to use
+
+	    func didUpdateWaltzFCMTokenWithErrorCode(_ errorCode: SDKResponseCodes) {
+		print("The Update FCM token quit with error code \(errorCode)")
+	    }
+
+	    func didGetWaltzDDInfos(_ ddInfos: DDInfos) {
+		print("We have received the DD infos elevator: \(ddInfos.elevator) floor: \(ddInfos.floor)")
+	    }
+ 
 ## Waltz error code
 
     typedef enum {
