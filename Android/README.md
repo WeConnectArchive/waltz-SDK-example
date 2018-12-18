@@ -297,16 +297,23 @@ https://firebase.google.com/docs/cloud-messaging/android/client
                     }
                 });
 
-4. Create a class that extends WaltzMessagingService. 
-The method onNewMessageReceived() returns to your app Fcm that not belongs to WaltzSDK.
+4. In your MyMessagingService class, send new token received to the WaltzSDK and check if the message received belongs to the WaltzSDK or not.
 
-        public class MyMessagingService extends WaltzMessagingService {
+        public class MyMessagingService extends FirebaseMessagingService {
         
-            @Override
-            protected void onNewMessageReceived(RemoteMessage remoteMessage) {
-                super.onNewMessageReceived(remoteMessage);
-                Log.d("Firebase", "onNewMessageReceived \n" + remoteMessage.getData().toString());
-            }
+		    @Override
+		    public void onNewToken(String token) {
+			super.onNewToken(token);
+			WaltzSDK.getInstance().updateFcmToken(token);
+		    }
+
+		    @Override
+		    public void onMessageReceived(RemoteMessage remoteMessage) {
+			super.onMessageReceived(remoteMessage);
+			if (! WaltzSDK.getInstance().isWaltzRemoteMessage(remoteMessage.getData())) {
+			    // Handle your message
+			}
+		    }
         }
 
 5. Declare the service in the AndroidManifest.xml
