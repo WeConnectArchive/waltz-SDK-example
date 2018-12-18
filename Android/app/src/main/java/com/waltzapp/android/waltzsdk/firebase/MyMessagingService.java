@@ -1,18 +1,26 @@
 package com.waltzapp.android.waltzsdk.firebase;
 
-import android.util.Log;
 
+import com.google.firebase.messaging.FirebaseMessagingService;
 import com.google.firebase.messaging.RemoteMessage;
-import com.waltzapp.androidsdk.firebase.WaltzMessagingService;
+import com.waltzapp.androidsdk.WaltzSDK;
 
 /**
  * Created by kamalazougagh on 2018-11-28.
  */
-public class MyMessagingService extends WaltzMessagingService {
+public class MyMessagingService extends FirebaseMessagingService {
 
     @Override
-    protected void onNewMessageReceived(RemoteMessage remoteMessage) {
-        super.onNewMessageReceived(remoteMessage);
-        Log.d("Firebase", "onNewMessageReceived \n" + remoteMessage.getData().toString());
+    public void onNewToken(String token) {
+        super.onNewToken(token);
+        WaltzSDK.getInstance().updateFcmToken(token);
+    }
+
+    @Override
+    public void onMessageReceived(RemoteMessage remoteMessage) {
+        super.onMessageReceived(remoteMessage);
+        if (! WaltzSDK.getInstance().isWaltzRemoteMessage(remoteMessage.getData())) {
+            // Handle your message
+        }
     }
 }
