@@ -54,11 +54,14 @@ class ViewController: UIViewController, WltzSDKMgrDelegate {
          Please contact the Waltz team to have one.
          */
         
+        var viewController: NewCustomVC? = nil
         if let tabBarVC = parent as? UITabBarController {
-            tabBarVC.selectedIndex = 1
+            tabBarVC.selectedIndex = 2
+            
+            viewController = tabBarVC.viewControllers?[2] as? NewCustomVC
         }
         
-        WaltzSDKMgr.sharedManager.beginTransaction()
+        WaltzSDKMgr.sharedManager.beginTransaction(parentView: viewController?.customParentView, parentVC: viewController)
     }
     
     @IBAction func startGeofence(_ sender: UIButton) {

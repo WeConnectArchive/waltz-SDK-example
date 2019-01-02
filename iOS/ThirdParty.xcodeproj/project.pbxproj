@@ -20,6 +20,7 @@
 		2E6FFEF613DFF728E1154104 /* Pods_ThirdParty.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 54A25337381D3C268F6C3F9B /* Pods_ThirdParty.framework */; };
 		8A0FC5192123244200C132B9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A0FC5182123244200C132B9 /* AppDelegate.swift */; };
 		8A0FC51B212324BE00C132B9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A0FC51A212324BE00C132B9 /* ViewController.swift */; };
+		8A70502721CC35B400B099AE /* NewCustomVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A70502621CC35B400B099AE /* NewCustomVC.swift */; };
 		8AB7F6C721138E85001F4970 /* libiconv.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 2283EFAA1F7D1A010068925B /* libiconv.tbd */; };
 		8ABC902B21BACD4B0024DE5C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8ABC902A21BACD4B0024DE5C /* GoogleService-Info.plist */; };
 		8AD865C22135BC49008696CA /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 8AD865C12135BC49008696CA /* Podfile */; };
@@ -59,6 +60,7 @@
 		8A0FC5182123244200C132B9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8A0FC51A212324BE00C132B9 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		8A1C721921498EF00004635C /* ThirdParty.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ThirdParty.entitlements; sourceTree = "<group>"; };
+		8A70502621CC35B400B099AE /* NewCustomVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewCustomVC.swift; sourceTree = "<group>"; };
 		8ABC902A21BACD4B0024DE5C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		8AD865C12135BC49008696CA /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 /* End PBXFileReference section */
@@ -107,6 +109,7 @@
 				8A1C721921498EF00004635C /* ThirdParty.entitlements */,
 				8A0FC5182123244200C132B9 /* AppDelegate.swift */,
 				8A0FC51A212324BE00C132B9 /* ViewController.swift */,
+				8A70502621CC35B400B099AE /* NewCustomVC.swift */,
 				222C7BB61F7BF0170065829B /* Main.storyboard */,
 				222C7BB91F7BF0170065829B /* Assets.xcassets */,
 				222C7BBB1F7BF0170065829B /* LaunchScreen.storyboard */,
@@ -296,6 +299,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8A70502721CC35B400B099AE /* NewCustomVC.swift in Sources */,
 				8A0FC51B212324BE00C132B9 /* ViewController.swift in Sources */,
 				8A0FC5192123244200C132B9 /* AppDelegate.swift in Sources */,
 			);
