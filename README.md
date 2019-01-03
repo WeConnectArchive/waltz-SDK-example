@@ -70,7 +70,11 @@ You need to request the camera permission
 
         WaltzSDKMgr.sharedManager.beginTransaction()
 
-Then the first time you will have to log with valid credential and you will then be redirect to the QR that will enable you to open a door (that you have access) after that the user won't have to log again if he use the application regularly.
+Then the first time you will have to log with valid credential and you will then be redirect to the QR that will enable you to open a door (that you have access) after that the user won't have to log again if he use the application regularly. The navigation will be taken care by the SDK (wheter it is inside a NavigationController, TabViewController or not). If you want to force it inside a custom view you can the same function with the following parameters:
+
+        WaltzSDKMgr.sharedManager.beginTransaction(parentView: UIView, parentVC: UIViewController)
+	
+This will make sure to register our SDK controller within the one specify and add our views within the parentView. 
 
 2. Transaction result: you have 1 callback (WltzSDKMgrDelegate) that you can implement:
 
