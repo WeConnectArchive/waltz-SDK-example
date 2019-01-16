@@ -25,8 +25,10 @@ extern NSString *const kVendorUUID;
 /*
     Regex for password and email
  */
-extern NSString *const PASSWORD_REGEX;
 extern NSString *const EMAIL_REGEX;
+extern NSString *const PASSWORD_REGEX;
+extern NSString *const NEW_PASSWORD_REGEX;
+extern NSString *const PHONE_REGEX;
 
 typedef enum {
     CameraPermissionsDenied,
