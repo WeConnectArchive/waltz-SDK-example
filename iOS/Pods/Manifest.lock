@@ -64,7 +64,7 @@ PODS:
   - nanopb/encode (0.3.901)
   - Protobuf (3.6.1)
   - UICKeyChainStore (2.1.2)
-  - WaltzAccess (2.0.3):
+  - WaltzAccess (2.0.4):
     - Alamofire
     - Freddy
     - JWTDecode
@@ -112,7 +112,7 @@ SPEC CHECKSUMS:
   nanopb: 2901f78ea1b7b4015c860c2fdd1ea2fee1a18d48
   Protobuf: 1eb9700044745f00181c136ef21b8ff3ad5a0fd5
   UICKeyChainStore: 85db518bb1d294366d15ec9b92a416c4e670518f
-  WaltzAccess: df002097502647a61c11f1f7041e24f8ad5a73f0
+  WaltzAccess: 088ecd9413a8cfa0b4050529e1957de295fdb333
   WaltzPBC: 41a1e1fda891bda837d0f081115fc751766aee98
 
 PODFILE CHECKSUM: 2bb528457f072b560328c1d868bd7b46321fd4f0
