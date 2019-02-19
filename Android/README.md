@@ -82,7 +82,7 @@ BUILD SUCCESSFUL in 0m 23s
      			...
 
      			// Waltz
-     			implementation 'com.waltzapp.transaction:waltz-sdk:1.1.0-rc01'
+     			implementation 'com.waltzapp.transaction:waltz-sdk:2.4.0'
 			}
 		}
 
@@ -102,6 +102,12 @@ On your Application class
 
 ## Login
 
+
+### Determine if you should login before starting a transaction
+		if (WaltzSDK.getInstance().shouldLogin()) {
+			// start login
+		}
+
 ### Start login
 		  
 	  	public void onLogin() {
@@ -114,11 +120,6 @@ On your Application class
 			});
 			startFragment(fragment);
 		    }
-
-### Determine if you should login before starting a transaction
-		if (WaltzSDK.getInstance().shouldLogin()) {
-			// start login
-		}
 
 ### Customize the login visual
 
@@ -170,9 +171,12 @@ You can specify the login visual (background image, logo and primary color). Tho
 
 The user have to be logged in to use it.
 
-Get user infos
+Get user infos from JWT. The JWT contains the user's Uid, first name, last name and email. 
    
-        WaltzSDK.getInstance().getUserInfos();
+	WaltzSDK.getInstance().getJwt()
+	
+   	@Deprecated
+	WaltzSDK.getInstance().getUserInfos();
 
 ## Geofencing feature
 ### Start the service
