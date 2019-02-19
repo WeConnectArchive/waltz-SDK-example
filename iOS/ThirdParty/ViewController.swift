@@ -7,6 +7,7 @@
 //
 
 import AVFoundation
+import JWTDecode
 import WaltzAccess
 
 class ViewController: UIViewController, WltzSDKMgrDelegate {
@@ -165,14 +166,14 @@ class ViewController: UIViewController, WltzSDKMgrDelegate {
     }
     
     @IBAction func getUserInfo(_ sender: Any) {
-        WaltzSDKMgr.sharedManager.getUserInfos()
+        WaltzSDKMgr.sharedManager.getJWT()
     }
     
-    func didGetWaltzUserInfoWithErrorCode(_ errorCode: SDKResponseCodes, userInfo: WaltzUserInfos?) {
-        print("The Get UserInfo quit with error code \(errorCode)")
+    func didGetWaltzJWTWithErrorCode(_ errorCode: SDKResponseCodes, jwt: JWT?) {
+        print("The Get JWT quit with error code \(errorCode)")
         
-        if errorCode == SUCCESS, let newUserInfo = userInfo {
-            responseTV.text = "Name: \(newUserInfo.name)\nEmail: \(newUserInfo.email)\nID: \(newUserInfo.id.uuidString)"
+        if errorCode == SUCCESS, let newJWT = jwt {
+            responseTV.text = "Name: \(newJWT.body["firstName"]!) \(newJWT.body["lastName"]!)\nEmail: \(newJWT.body["userEmail"]!)\nID: \(newJWT.body["uid"]!)"
         }
     }
 }

@@ -17,7 +17,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, MessagingDelegate, UNUser
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
 
-        let _ = WaltzSDKMgr.sharedManager.initManager(licenseKey: "PUT---YOUR---iOS---LICENSE---HERE", appUid: "PUT---YOUR---VENDOR---UUID---HERE").setLoginVisual(backgroundImage: UIImage(named: "background"), logo: UIImage(named: "logo"), backgroundColor: UIColor.black, primaryColor: UIColor(red: 46/255, green: 104/255, blue: 116/255, alpha: 1.0)) // PROD
+//        let _ = WaltzSDKMgr.sharedManager.initManager(licenseKey: "07e4a0af-eb62-4543-9cf0-c7079bdc3140", appUid: "e3d8ecd1-27f6-4e3e-ab05-4eac628d24be").setLoginVisual(backgroundImage: UIImage(named: "background"), logo: UIImage(named: "logo"), backgroundColor: UIColor.black, primaryColor: UIColor(red: 46/255, green: 104/255, blue: 116/255, alpha: 1.0)) // PROD Elevate
+        let _ = WaltzSDKMgr.sharedManager.initManager(licenseKey: "b46ec9dc-57bd-41ff-abc4-ec6e8a62a559", appUid: "3892d4a7-abfa-4b89-bb3f-6b8f47ec7cfe").setLoginVisual(backgroundImage: UIImage(named: "background"), logo: UIImage(named: "logo"), backgroundColor: UIColor.black, primaryColor: UIColor(red: 46/255, green: 104/255, blue: 116/255, alpha: 1.0)) // PROD District Tech
         
         FirebaseApp.configure()
         Messaging.messaging().delegate = self

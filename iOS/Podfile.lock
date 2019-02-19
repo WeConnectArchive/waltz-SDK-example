@@ -1,38 +1,38 @@
 PODS:
   - Alamofire (4.8.1)
-  - Firebase/Core (5.15.0):
+  - Firebase/Core (5.16.0):
     - Firebase/CoreOnly
-    - FirebaseAnalytics (= 5.4.0)
-  - Firebase/CoreOnly (5.15.0):
-    - FirebaseCore (= 5.1.10)
-  - Firebase/Messaging (5.15.0):
+    - FirebaseAnalytics (= 5.5.0)
+  - Firebase/CoreOnly (5.16.0):
+    - FirebaseCore (= 5.2.0)
+  - Firebase/Messaging (5.16.0):
     - Firebase/CoreOnly
-    - FirebaseMessaging (= 3.2.2)
-  - FirebaseAnalytics (5.4.0):
-    - FirebaseCore (~> 5.1)
-    - FirebaseInstanceID (~> 3.3)
-    - GoogleAppMeasurement (= 5.4.0)
+    - FirebaseMessaging (= 3.3.0)
+  - FirebaseAnalytics (5.5.0):
+    - FirebaseCore (~> 5.2)
+    - FirebaseInstanceID (~> 3.4)
+    - GoogleAppMeasurement (= 5.5.0)
     - GoogleUtilities/AppDelegateSwizzler (~> 5.2)
     - GoogleUtilities/MethodSwizzler (~> 5.2)
     - GoogleUtilities/Network (~> 5.2)
     - "GoogleUtilities/NSData+zlib (~> 5.2)"
     - nanopb (~> 0.3)
   - FirebaseAnalyticsInterop (1.1.0)
-  - FirebaseCore (5.1.10):
+  - FirebaseCore (5.2.0):
     - GoogleUtilities/Logger (~> 5.2)
-  - FirebaseInstanceID (3.3.0):
-    - FirebaseCore (~> 5.1)
+  - FirebaseInstanceID (3.4.0):
+    - FirebaseCore (~> 5.2)
     - GoogleUtilities/Environment (~> 5.3)
     - GoogleUtilities/UserDefaults (~> 5.3)
-  - FirebaseMessaging (3.2.2):
+  - FirebaseMessaging (3.3.0):
     - FirebaseAnalyticsInterop (~> 1.1)
-    - FirebaseCore (~> 5.1)
-    - FirebaseInstanceID (~> 3.0)
+    - FirebaseCore (~> 5.2)
+    - FirebaseInstanceID (~> 3.4)
     - GoogleUtilities/Environment (~> 5.2)
     - GoogleUtilities/Reachability (~> 5.2)
     - Protobuf (~> 3.1)
   - Freddy (3.0.3)
-  - GoogleAppMeasurement (5.4.0):
+  - GoogleAppMeasurement (5.5.0):
     - GoogleUtilities/AppDelegateSwizzler (~> 5.2)
     - GoogleUtilities/MethodSwizzler (~> 5.2)
     - GoogleUtilities/Network (~> 5.2)
@@ -64,7 +64,7 @@ PODS:
   - nanopb/encode (0.3.901)
   - Protobuf (3.6.1)
   - UICKeyChainStore (2.1.2)
-  - WaltzAccess (2.0.4):
+  - WaltzAccess (2.1.0):
     - Alamofire
     - Freddy
     - JWTDecode
@@ -99,20 +99,20 @@ SPEC REPOS:
 
 SPEC CHECKSUMS:
   Alamofire: 16ce2c353fb72865124ddae8a57c5942388f4f11
-  Firebase: 8bb9268bff82374f2cbaaabb143e725743c316ae
-  FirebaseAnalytics: c06f9d70577d79074214700a71fd5d39de5550fb
+  Firebase: 749a8ff4962f9d8c79dda1966de20f6f77583d67
+  FirebaseAnalytics: d35d47c03c50c73c14a7fd31463c5775843e78a9
   FirebaseAnalyticsInterop: e5f21be9af6548372e2f0815834ff909bff395a2
-  FirebaseCore: 35747502d9e8c6ee217385ad04446c7c2aaf9c5c
-  FirebaseInstanceID: e2fa4cb35ef5558c200f7f0ad8a53e212215f93e
-  FirebaseMessaging: b412996f6a09337d232bb3a6676ce4d1f353d024
+  FirebaseCore: ea2d1816723ef21492b8e9113303e1350db5e08c
+  FirebaseInstanceID: 97ea7a5dca9afd72c79bfcdddb7a44aa1cbb42a1
+  FirebaseMessaging: acbd51fe1a172bf29abaaa6e93a60f98bbf8e4f9
   Freddy: 7c62db262a0d0e3b3e2b8b40f2c0cc51e122fbc4
-  GoogleAppMeasurement: 98b71f5e04142793729a5ef23e5b96651ff4b70f
+  GoogleAppMeasurement: 621f3bc6211d5ba548debe01fafad30cf5ab6859
   GoogleUtilities: 111a012f4c3a29c9e7c954c082fafd6ee3c999c0
   JWTDecode: 85a405ab16d5473e99bd89ded1d535090ebd6a0e
   nanopb: 2901f78ea1b7b4015c860c2fdd1ea2fee1a18d48
   Protobuf: 1eb9700044745f00181c136ef21b8ff3ad5a0fd5
   UICKeyChainStore: 85db518bb1d294366d15ec9b92a416c4e670518f
-  WaltzAccess: 088ecd9413a8cfa0b4050529e1957de295fdb333
+  WaltzAccess: 4d2d7a43bbf238029d25af38edd5f527efacceb1
   WaltzPBC: 41a1e1fda891bda837d0f081115fc751766aee98
 
 PODFILE CHECKSUM: 2bb528457f072b560328c1d868bd7b46321fd4f0

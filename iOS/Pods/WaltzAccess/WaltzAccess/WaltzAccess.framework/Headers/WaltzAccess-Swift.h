@@ -163,6 +163,7 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 # define SWIFT_DEPRECATED_OBJC(Msg) SWIFT_DEPRECATED_MSG(Msg)
 #endif
 #if __has_feature(modules)
+@import Foundation;
 @import ObjectiveC;
 @import UIKit;
 #endif
@@ -188,11 +189,12 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 
 SWIFT_CLASS("_TtC11WaltzAccess18InvitationResponse")
 @interface InvitationResponse : NSObject
-- (NSString * _Nonnull)getStatusName SWIFT_WARN_UNUSED_RESULT;
 @property (nonatomic, readonly, copy) NSString * _Nonnull organizationName;
 @property (nonatomic, readonly, copy) NSString * _Nonnull organizationAddress;
-@property (nonatomic, readonly, copy) NSString * _Nonnull doorScheduleStart;
-@property (nonatomic, readonly, copy) NSString * _Nonnull doorScheduleStop;
+@property (nonatomic, readonly, copy) NSString * _Nonnull doorScheduleStart SWIFT_DEPRECATED_MSG("No longer available, should use startDate instead!", "startDate");
+@property (nonatomic, readonly, copy) NSDate * _Nonnull startDate;
+@property (nonatomic, readonly, copy) NSString * _Nonnull doorScheduleStop SWIFT_DEPRECATED_MSG("No longer available, should use endDate instead!", "endDate");
+@property (nonatomic, readonly, copy) NSDate * _Nonnull endDate;
 @property (nonatomic, readonly, strong) Person * _Nonnull guest;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_DEPRECATED_MSG("-init is unavailable");
@@ -204,13 +206,6 @@ SWIFT_CLASS("_TtC11WaltzAccess6Person")
 @property (nonatomic, readonly, copy) NSString * _Nonnull name;
 @property (nonatomic, readonly, copy) NSString * _Nonnull email;
 - (nonnull instancetype)initWithFirstName:(NSString * _Nonnull)firstName lastName:(NSString * _Nonnull)lastName email:(NSString * _Nonnull)email phone:(NSString * _Nullable)phone avatarPath:(NSString * _Nullable)avatarPath OBJC_DESIGNATED_INITIALIZER;
-- (nonnull instancetype)init SWIFT_UNAVAILABLE;
-+ (nonnull instancetype)new SWIFT_DEPRECATED_MSG("-init is unavailable");
-@end
-
-
-SWIFT_CLASS("_TtC11WaltzAccess21TransactionResultData")
-@interface TransactionResultData : NSObject
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_DEPRECATED_MSG("-init is unavailable");
 @end
