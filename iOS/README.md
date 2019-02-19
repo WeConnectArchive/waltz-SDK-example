@@ -135,19 +135,29 @@ The user have to be logged in to use it.
 
 1. Get user infos
    
-        WaltzSDKMgr.sharedManager.getUserInfos()
+		@available(*, deprecated, message: "No longer available, should use getJWT instead!", renamed: "getJWT")
+		WaltzSDKMgr.sharedManager.getUserInfos()
+		WaltzSDKMgr.sharedManager.getJWT()
 
 2. Results are sent in this function:
 
-        func didGetWaltzUserInfoWithErrorCode(_ errorCode: SDKResponseCodes, userInfo: WaltzUserInfos?)
+		@available(*, deprecated, message: "No longer available, should use didGetWaltzJWTWithErrorCode instead!", renamed: "didGetWaltzJWTWithErrorCode")
+		func didGetWaltzUserInfoWithErrorCode(_ errorCode: SDKResponseCodes, userInfo: WaltzUserInfos?)
+		func didGetWaltzJWTWithErrorCode(_ errorCode: SDKResponseCodes, jwt: JWT?)
 
-If the status is SUCCESS you will have the user informations inside the WaltzUserInfos that look like that:
+If the status is SUCCESS you will have the user informations inside the JWT that look like that:
 
+	@available(*, deprecated, message: "No longer available, should use JWT instead!", renamed: "JWT")
 	public class WaltzUserInfos {
 	    public let email: String
 	    public let name: String
 	    public let id: UUID
     	}
+	
+	jwt.body["firstName"]
+	jwt.body["lastName"]
+	jwt.body["userEmail"]
+	jwt.body["uid"]
 	
 ## Destination dispatch
 In order to receive the destination dispatch informations, you should create a Firebase project https://firebase.google.com/docs/ios/setup
