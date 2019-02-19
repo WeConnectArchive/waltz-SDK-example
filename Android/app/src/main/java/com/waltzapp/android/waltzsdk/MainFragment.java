@@ -91,7 +91,8 @@ public class MainFragment extends Fragment {
                 WaltzUserInfos infos = WaltzSDK.getInstance().getUserInfos();
                 String result = "Name  : " + infos.name + "\n" +
                         "Email : " + infos.email + "\n" +
-                        "Uid   : " + infos.uid;
+                        "Uid   : " + infos.uid + "\n" +
+                        "Token : " + WaltzSDK.getInstance().getJwt();
                 mUserInfosResult.setText(result);
                 mUserInfosResult.setVisibility(View.VISIBLE);
             }
