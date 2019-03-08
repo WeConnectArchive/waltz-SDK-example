@@ -1,76 +1,76 @@
 # iOS
 
-IMPORTANT: Need to be sure not to compile for emulator but for a generic device or a real device
+IMPORTANT:   Ensure that when compiling, you select 'Generic Device' or 'Real Device', and not 'Emulator'. 
 
 cd iOS
 
-pod install
+Pod install
 
 ## SDK initialization
 
-1. In your Podfile make sure to add the following sources:
+1. In your Podfile, add the following sources:
 
         source 'https://github.com/WaltzApp/Podspecs.git' # To have access to Waltz Pods/Framework
     
-        source 'https://github.com/CocoaPods/Specs.git'   # To continue to have access to regular Public Pods
+        source 'https://github.com/CocoaPods/Specs.git'   # To have access to regular Public Pods
 
 2. Add the following dependency:
 
         pod 'WaltzAccess', :inhibit_warnings => true
 
-3. Open the workspace (ThirdParty.xcworkspace)
+3. Open Workspace (ThirdParty.xcworkspace)
 
-4. Open the AppDelegate.swift
+4. Open AppDelegate.swift
 
-5. Change the following line with your license and your appUid:
+5. Replace the following line with your license & your appUid:
 
         WaltzSDKMgr.sharedManager.initManager(licenseKey: "PUT---YOUR---iOS---LICENSE---HERE", appUid: "PUT---YOUR---VENDOR---UUID---HERE")
-	
-	
-6. Make sure to set the architecture flag to "NO" (Build Active Architecture Only) <p align="center">
+    
+    
+6. Set the architecture flag to "NO" (Build Active Architecture Only) <p align="center">
   <img src="./ThirdParty - Architecture setup.png" width="800" title="Architecture setup">
 </p>
 
-7. Make sure to select "Generic iOS Device" and not a emulator <p align="center">
+7. Select "Generic iOS Device" (not "emulator") <p align="center">
   <img src="./Generic Device Setup.png" width="400" title="Architecture setup">
 </p>
 
-You can now build and run on a device
+You can now build & run on a device
 
-## Customize the login visual
+## Customizing the login Visual element
 
-You can specify the login visual (background image, logo, background color and primary color). Those value are all option, so if you don't specify any it will take the default (Waltz brand). To do so you need to call the following:
+You can specify the login Visual element (background image, logo, background color & primary color). These values are optional. If none are specified, the default "Waltz" brand will be applied. To specify a login Visual, call the following:
 
       WaltzSDKMgr.sharedManager.setLoginVisual(backgroundImage: UIImage, logo: UIImage, backgroundColor: UIColor, primaryColor: UIColor)
 
-## Log the user In
+## Logging the user In
 
-Internet connection is required
+An Internet connection is required
 
-To request the login flow you need to call the following function:
+To request the Login flow, call the following function:
 
         WaltzSDKMgr.sharedManager.logIn()
-	
-The result will be send in the following callback (WltzSDKMgrDelegate):
+    
+The result will be sent into the following callback (WltzSDKMgrDelegate):
 
             func didFinishWaltzLogin(_ errorCode: SDKResponseCodes)
 
-## Start a transaction
+## Starting a transaction
 
-The user have to be logged in to use it.
-Internet connection is required
+The user has to be logged in to use the Login flow.
+An Internet connection is required
 
-You need to request the camera permission
+Requesting camera permissions
 
-1. You need to call the following function:
+1. Call the following function:
 
         WaltzSDKMgr.sharedManager.beginTransaction()
 
-Then the first time you will have to log with valid credential and you will then be redirect to the QR that will enable you to open a door (that you have access) after that the user won't have to log again if he use the application regularly. The navigation will be taken care by the SDK (wheter it is inside a NavigationController, TabViewController or not). If you want to force it inside a custom view you can the same function with the following parameters:
+When you log in for the first time, you'll need valid credentials. Then the QR page appears, which enables access (if you have access). The user won't have to log again if he uses the application regularly. The navigation is taken care of by the SDK (whether it is inside a NavigationController, TabViewController or not). To force the navigation inside a custom view, call the same function but with the following parameters:
 
         WaltzSDKMgr.sharedManager.beginTransaction(parentView: UIView, parentVC: UIViewController)
-	
-This will make sure to register our SDK controller within the one specify and add our views within the parentView. 
+    
+This will register our SDK controller within the one specified and add our views within the parentView. 
 
 2. Transaction result: you have 1 callback (WltzSDKMgrDelegate) that you can implement:
 
@@ -78,10 +78,10 @@ This will make sure to register our SDK controller within the one specify and ad
     
 ## Geofencing feature
 
-The user have to be logged in to use it.
-Internet connection is required for the first call after that it is no longer need but if it is not provided the geofence won't be updated.
+The user has to be logged in to use it.
+An Internet connection is required for the first call, then it is no longer needed but if it is not provided, the geofence doesn't be updated.
 
-You need to request the location and notication permission
+You need to request the location and notication permissions
 
 1. Start the service
 
@@ -97,8 +97,8 @@ You need to request the location and notication permission
 
 ## Guest feature
 
-The user have to be logged in to use it.
-Internet connection is required for all calls
+The user has to be logged in to use it.
+An Internet connection is required for all calls
 
 1. Send an invitation
 
@@ -127,61 +127,61 @@ Internet connection is required for all calls
 
         func didSendWaltzInvitationWithErrorCode(_ errorCode: SDKResponseCodes)
     
-2 first two have a list of invitations that were made by the user and the last one only the status
+2 The first two have a list of invitations made by the user and the last one contain the statuses of these invitations
 
 ## User informations
 
-The user have to be logged in to use it.
+The user has to be logged in to use it.
 
 1. Get user infos
    
-		@available(*, deprecated, message: "No longer available, should use getJWT instead!", renamed: "getJWT")
-		WaltzSDKMgr.sharedManager.getUserInfos()
-		WaltzSDKMgr.sharedManager.getJWT()
+        @available(*, deprecated, message: "No longer available, should use getJWT instead!", renamed: "getJWT")
+        WaltzSDKMgr.sharedManager.getUserInfos()
+        WaltzSDKMgr.sharedManager.getJWT()
 
 2. Results are sent in this function:
 
-		@available(*, deprecated, message: "No longer available, should use didGetWaltzJWTWithErrorCode instead!", renamed: "didGetWaltzJWTWithErrorCode")
-		func didGetWaltzUserInfoWithErrorCode(_ errorCode: SDKResponseCodes, userInfo: WaltzUserInfos?)
-		func didGetWaltzJWTWithErrorCode(_ errorCode: SDKResponseCodes, jwt: JWT?)
+        @available(*, deprecated, message: "No longer available, should use didGetWaltzJWTWithErrorCode instead!", renamed: "didGetWaltzJWTWithErrorCode")
+        func didGetWaltzUserInfoWithErrorCode(_ errorCode: SDKResponseCodes, userInfo: WaltzUserInfos?)
+        func didGetWaltzJWTWithErrorCode(_ errorCode: SDKResponseCodes, jwt: JWT?)
 
-If the status is SUCCESS you will have the user informations inside the JWT that look like that:
+If the status is SUCCESS, the user informations inside the JWT will look like this:
 
-	@available(*, deprecated, message: "No longer available, should use JWT instead!", renamed: "JWT")
-	public class WaltzUserInfos {
-	    public let email: String
-	    public let name: String
-	    public let id: UUID
-    	}
-	
-	jwt.body["firstName"]
-	jwt.body["lastName"]
-	jwt.body["userEmail"]
-	jwt.body["uid"]
-	
+    @available(*, deprecated, message: "No longer available, should use JWT instead!", renamed: "JWT")
+    public class WaltzUserInfos {
+        public let email: String
+        public let name: String
+        public let id: UUID
+        }
+    
+    jwt.body["firstName"]
+    jwt.body["lastName"]
+    jwt.body["userEmail"]
+    jwt.body["uid"]
+    
 ## Destination dispatch
-In order to receive the destination dispatch informations, you should create a Firebase project https://firebase.google.com/docs/ios/setup
+In order to receive the destination dispatch information, you must create a Firebase project https://firebase.google.com/docs/ios/setup
 
 Then set up Firebase Cloud Messaging https://firebase.google.com/docs/cloud-messaging/ios/client
 
-Send to Waltz your FCM Server Key at sdksupport@waltzapp.com
+Send your FCM Server Key to Waltz at sdksupport@waltzapp.com
 
-1. In your AppDelegate class, herit from MessagingDelegate and UNUserNotificationCenterDelegate
+1. In your AppDelegate class, inherit from MessagingDelegate and UNUserNotificationCenterDelegate
 
         import Firebase
         import FirebaseMessaging
         import UserNotifications
 
         class AppDelegate: UIResponder, UIApplicationDelegate, MessagingDelegate, UNUserNotificationCenterDelegate
-	 
+     
 2. In the didFinishLaunchingWithOptions configure Firebase, register delegate
 
         func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
             FirebaseApp.configure()
             Messaging.messaging().delegate = self
         }
-	
-3. Make sure to request for notification permission
+    
+3. Make sure to request for notification permissions
 
         if #available(iOS 10.0, *) {
             // For iOS 10 display notification (sent via APNS)
@@ -198,7 +198,7 @@ Send to Waltz your FCM Server Key at sdksupport@waltzapp.com
         }
         
         application.registerForRemoteNotifications()
-	
+    
 4. Send any new FCM token to the SDK by calling this delegate function in the AppDelegate
 
         // MARK: FCM METHODS
@@ -207,8 +207,8 @@ Send to Waltz your FCM Server Key at sdksupport@waltzapp.com
             WaltzSDKMgr.sharedManager.updateFcmToken(fcmToken)
             Messaging.messaging().shouldEstablishDirectChannel = true
         }
-	
-5. Send the notification data (userInfo) to the SDK in order for it to validate if it belongs to Waltz or not
+    
+5. Send the notification data (userInfo) to the SDK for it to validate whether it belongs to Waltz or not
 
         // MARK: REMOTE NOTIFICATION METHODS
         func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable : Any], fetchCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
@@ -220,17 +220,17 @@ Send to Waltz your FCM Server Key at sdksupport@waltzapp.com
                 // Fallback on earlier versions
             }
         }
-The onReceiveNotification function returns true if it was handle by the SDK and false if it is for you to handle
+The onReceiveNotification function returns true if it was handled by the SDK and false if it is for you to handle
 
 5. SDK Callback for FCM update and for DDInfos. You should receive those callback from WltzSDKMgrDelegate if you registered your FCM and if there is any DDInfos (Destination Dispatch informations) available for you to use
 
-	    func didUpdateWaltzFCMTokenWithErrorCode(_ errorCode: SDKResponseCodes) {
-		print("The Update FCM token quit with error code \(errorCode)")
-	    }
+        func didUpdateWaltzFCMTokenWithErrorCode(_ errorCode: SDKResponseCodes) {
+        print("The Update FCM token quit with error code \(errorCode)")
+        }
 
-	    func didGetWaltzDDInfos(_ ddInfos: DDInfos) {
-		print("We have received the DD infos elevator: \(ddInfos.elevator) floor: \(ddInfos.floor)")
-	    }
+        func didGetWaltzDDInfos(_ ddInfos: DDInfos) {
+        print("We have received the DD infos elevator: \(ddInfos.elevator) floor: \(ddInfos.floor)")
+        }
  
 ## Waltz error code
 
@@ -281,9 +281,9 @@ The onReceiveNotification function returns true if it was handle by the SDK and 
 Installing cocoap install:
 https://guides.cocoapods.org/using/getting-started.html
 
-If you want to have a newer version of the SDK run the following command where the "Podfile" is located
+If you want a newer version of the SDK, run the following command where the "Podfile" is located
 
-	   pod update
+       pod update
 
 
-SDK supports TabBarViewController and NavigationController. The SDK UI will be embedded automatically in its parent. To see both working just change the "Entry Point" in the example storyboard.
+SDK supports TabBarViewController and NavigationController. The SDK UI will be embedded automatically in its parent. To see both working, just change the "Entry Point" in the example storyboard.

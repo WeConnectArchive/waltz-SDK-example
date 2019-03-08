@@ -12,7 +12,7 @@ These values are specific to a 3rd party application and should be kept private:
 	<string name="waltz_app_uid">___YOUR_APP_UID___</string>
 	<string name="waltz_app_key">__YOUR_LICENSE_KEY__</string>
 
-Below are the steps required to get build and run the **android** example with your credentials:
+Below are the steps required to get a build and run the **android** example with your credentials:
 
 ### Enter your license information
 
@@ -123,7 +123,7 @@ On your Application class
 
 ### Customize the login visual
 
-You can specify the login visual (background image, logo and primary color). Those value are all option, so if you don't specify any it will take the default (Waltz brand). To do so you need to call the following:
+You can specify the login Visual element (background image, logo, background color & primary color). These values are optional. If none are specified, the default "Waltz" brand will be applied. To specify a login Visual, call the following:
 
                 public void onLogin() {
 			WaltzLogInFragment fragment = WaltzLogInFragment.newInstance(new WaltzCallback() {
@@ -140,7 +140,7 @@ You can specify the login visual (background image, logo and primary color). Tho
 			startFragment(fragment);
 		    }
 
-## Start a transaction
+## Starting a transaction
 
 ### On your Activity or fragment
 
@@ -169,9 +169,9 @@ You can specify the login visual (background image, logo and primary color). Tho
 
 ## User informations
 
-The user have to be logged in to use it.
+The user has to be logged in to use it.
 
-Get user infos from JWT. The JWT contains the user's Uid, first name, last name and email. 
+Get user info from the JWT. The JWT contains the user's Uid, first name, last name and email. 
    
 	WaltzSDK.getInstance().getJwt()
 	
@@ -179,7 +179,7 @@ Get user infos from JWT. The JWT contains the user's Uid, first name, last name 
 	WaltzSDK.getInstance().getUserInfos();
 
 ## Geofencing feature
-### Start the service
+### Starting the service
 			
 		WaltzSDK
 			.getInstance()
@@ -191,7 +191,7 @@ Get user infos from JWT. The JWT contains the user's Uid, first name, last name 
 			})
 			.startGeofencing();
 
-### Stop the service
+### Stopping the service
 
 		WaltzSDK
 			.getInstance()
@@ -203,7 +203,7 @@ Get user infos from JWT. The JWT contains the user's Uid, first name, last name 
 			})
 			.stopGeofencing();
 
-### Customize notification - Call setter when initializing the SDK
+### Customizing notifications - Call setter when initializing the SDK
 
         // Waltz SDK initialization
         WaltzSDK
@@ -221,7 +221,7 @@ Get user infos from JWT. The JWT contains the user's Uid, first name, last name 
 
 
 ## Guest feature
-### Send an invitation
+### Sendind an invitation
 
 		String firstName = "My first name";
 		String lastName = "My last name";
@@ -301,7 +301,7 @@ https://firebase.google.com/docs/cloud-messaging/android/client
                     }
                 });
 
-4. In your MyMessagingService class, send new token received to the WaltzSDK and check if the message received belongs to the WaltzSDK or not.
+4. In your MyMessagingService class, send the newly received token to the WaltzSDK and check if the message received belongs or not to the WaltzSDK.
 
         public class MyMessagingService extends FirebaseMessagingService {
         
