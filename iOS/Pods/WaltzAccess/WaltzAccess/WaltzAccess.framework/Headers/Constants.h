@@ -11,8 +11,6 @@
 
 extern NSString *const WREFrameworkVersionNumber;
 
-extern NSString *const QRPageStoryBoardID;
-extern NSString *const CoverScreenViewControllerID;
 extern NSString *const StoryboardName;
 extern NSString *const LoginStoryBoardID;
 

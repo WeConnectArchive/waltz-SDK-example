@@ -77,13 +77,13 @@ class ViewController: UIViewController, WltzSDKMgrDelegate {
     @IBAction func getMyGuestsList(_ sender: UIButton) {
         responseTV.text = ""
         
-        WaltzSDKMgr.sharedManager.getMyGuests()
+        WaltzSDKMgr.sharedManager.getMyGuestsWithUUID()
     }
     
     @IBAction func getMyInvitationsList(_ sender: UIButton) {
         responseTV.text = ""
         
-        WaltzSDKMgr.sharedManager.getMyInvitations()
+        WaltzSDKMgr.sharedManager.getMyInvitationsWithUUID()
     }
     
     @IBAction func sendInvitation(_ sender: UIButton) {
@@ -115,19 +115,33 @@ class ViewController: UIViewController, WltzSDKMgrDelegate {
         print("The Geofence quit with error code \(errorCode)")
     }
     
-    func didGetWaltzMyGuestsWithErrorCode(_ errorCode: SDKResponseCodes, guests: [InvitationResponse]?) {
+    func didGetWaltzMyGuestsWithUUIDWithErrorCode(_ errorCode: SDKResponseCodes, guests: [(InvitationResponse, UUID)]?) {
         print("The Get my Guests quit with error code \(errorCode)")
 
         if errorCode == SUCCESS {
-            responseTV.text = try! guests!.toJSON().serializeString()
+            var newGuests = [InvitationResponse]()
+            if let newGuestsUUID = guests {
+                for guest in newGuestsUUID {
+                    newGuests.append(guest.0)
+                }
+            }
+            
+            responseTV.text = try! newGuests.toJSON().serializeString()
         }
     }
     
-    func didGetWaltzMyInvitationsWithErrorCode(_ errorCode: SDKResponseCodes, invitations: [InvitationResponse]?) {
+    func didGetWaltzMyInvitationsWithUUIDWithErrorCode(_ errorCode: SDKResponseCodes, invitations: [(InvitationResponse, UUID)]?) {
         print("The Get my Invitations quit with error code \(errorCode)")
         
         if errorCode == SUCCESS {
-            responseTV.text = try! invitations!.toJSON().serializeString()
+            var newInvitations = [InvitationResponse]()
+            if let newInvitationsUUID = invitations {
+                for invitation in newInvitationsUUID {
+                    newInvitations.append(invitation.0)
+                }
+            }
+            
+            responseTV.text = try! newInvitations.toJSON().serializeString()
         }
     }
     
@@ -145,6 +159,10 @@ class ViewController: UIViewController, WltzSDKMgrDelegate {
     
     func didGetWaltzDDInfos(_ ddInfos: DDInfos) {
         print("We have received the DD infos elevator: \(ddInfos.elevator) floor: \(ddInfos.floor)")
+    }
+    
+    func didRevokeWaltzInvitationWithErrorCode(_ errorCode: SDKResponseCodes) {
+        print("The Did Revoke Invitation quit with error code \(errorCode)")
     }
     
     func requestCameraPermission() {
