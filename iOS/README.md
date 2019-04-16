@@ -118,13 +118,23 @@ An Internet connection is required for all calls
 3. My Invitations (invitations received)
 
         WaltzSDKMgr.sharedManager.getMyInvitations()
+ 
+4. Revoke Invitation (only the one that I have sent and that is still active)
 
-4. Results are sent in those 3 functions:
+        WaltzSDKMgr.sharedManager.revokeInvitation(invitationUUID: UUID)
 
+5. Results are sent in those 3 functions:
+
+        @available(*, deprecated, message: "No longer available, should use didGetWaltzMyGuestsWithUUIDWithErrorCode(_ errorCode: SDKResponseCodes, guests: [(InvitationResponse, UUID)]?) instead!", renamed: "didGetWaltzMyGuestsWithErrorCode()")
         func didGetWaltzMyGuestsWithErrorCode(_ errorCode: SDKResponseCodes, guests: [InvitationResponse]?)
-
+        func didGetWaltzMyGuestsWithUUIDWithErrorCode(_ errorCode: SDKResponseCodes, guests: [(InvitationResponse, UUID)]?)
+        
+        @available(*, deprecated, message: "No longer available, should use didGetWaltzMyInvitationsWithUUIDWithErrorCode(_ errorCode: SDKResponseCodes, invitations: [(InvitationResponse, UUID)]?) instead!", renamed: "didGetWaltzMyInvitationsWithErrorCode()")
         func didGetWaltzMyInvitationsWithErrorCode(_ errorCode: SDKResponseCodes, invitations: [InvitationResponse]?)
-
+        func didGetWaltzMyInvitationsWithUUIDWithErrorCode(_ errorCode: SDKResponseCodes, invitations: [(InvitationResponse, UUID)]?)
+    
+        func didRevokeWaltzInvitationWithErrorCode(_ errorCode: SDKResponseCodes)
+        
         func didSendWaltzInvitationWithErrorCode(_ errorCode: SDKResponseCodes)
     
 2 The first two have a list of invitations made by the user and the last one contain the statuses of these invitations
