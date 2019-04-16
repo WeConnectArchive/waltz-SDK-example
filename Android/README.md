@@ -277,6 +277,18 @@ Get user info from the JWT. The JWT contains the user's Uid, first name, last na
 			}
 		});
 
+
+### Revoke Invitation (invitations sent and still active)
+
+                WaltzSDK
+                        .getInstance()
+                        .revokeInvitation("__invitation_uid__", new WaltzInvitationCallback() {
+                            @Override
+                            public void onComplete(WaltzCode waltzCode) {
+                                Toast.makeText(MainActivity.this, "Code: " + waltzCode, Toast.LENGTH_SHORT).show();
+                            }
+                        });
+
 ## Destination dispatch
 
 1. In order to receive the destination dispatch informations, you should create a Firebase project
