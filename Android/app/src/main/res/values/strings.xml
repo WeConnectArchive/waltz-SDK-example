@@ -3,7 +3,6 @@
 	
 	<string name="login">Login</string>
 	<string name="logout">Logout</string>
-	<string name="clear_data">Clear Data</string>
 	<string name="grant_camera_permission">Grant camera permission</string>
 	<string name="camera_permission_granted">Camera permission granted</string>
 </resources>
