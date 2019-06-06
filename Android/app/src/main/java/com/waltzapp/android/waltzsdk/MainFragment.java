@@ -196,12 +196,12 @@ public class MainFragment extends Fragment {
             }
         });
 
-        view.findViewById(R.id.clear).setOnClickListener(new View.OnClickListener() {
+        view.findViewById(R.id.logout).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 WaltzSDK
                         .getInstance()
-                        .clearWaltzData();
+                        .logout();
             }
         });
     }
