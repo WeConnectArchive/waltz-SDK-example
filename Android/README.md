@@ -140,6 +140,13 @@ You can specify the login Visual element (background image, logo, background col
 			startFragment(fragment);
 		    }
 
+## Logout the user
+
+In order to leave the SDK in the same state, make sure to call the following function when the user is logged out of your application:
+
+        	WaltzSDK.getInstance().logout();
+
+
 ## Starting a transaction
 
 ### On your Activity or fragment
