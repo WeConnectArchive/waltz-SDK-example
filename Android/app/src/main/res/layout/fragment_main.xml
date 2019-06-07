@@ -18,7 +18,7 @@
 			android:layout_marginEnd="32dp"
 			android:layout_marginStart="32dp"
 			android:layout_marginTop="4dp"
-			android:text="grant camera permission"
+			android:text="@string/grant_camera_permission"
 			/>
 		
 		<Button
@@ -29,7 +29,7 @@
 			android:layout_marginEnd="32dp"
 			android:layout_marginStart="32dp"
 			android:layout_marginTop="4dp"
-			android:text="login"
+			android:text="@string/login"
 			/>
 		
 		<Button
@@ -40,7 +40,7 @@
 			android:layout_marginEnd="32dp"
 			android:layout_marginStart="32dp"
 			android:layout_marginTop="4dp"
-			android:text="Start Transaction"
+			android:text="@string/start_transaction"
 			/>
 		
 		<Button
@@ -51,7 +51,7 @@
 			android:layout_marginEnd="32dp"
 			android:layout_marginStart="32dp"
 			android:layout_marginTop="4dp"
-			android:text="User infos"
+			android:text="@string/user_infos"
 			/>
 		
 		<TextView
@@ -73,7 +73,7 @@
 			android:layout_marginEnd="32dp"
 			android:layout_marginStart="32dp"
 			android:layout_marginTop="4dp"
-			android:text="start geofence"
+			android:text="@string/start_geofence"
 			/>
 		
 		<Button
@@ -84,7 +84,7 @@
 			android:layout_marginEnd="32dp"
 			android:layout_marginStart="32dp"
 			android:layout_marginTop="4dp"
-			android:text="stop geofence"
+			android:text="@string/stop_geofence"
 			/>
 		
 		<Button
@@ -95,7 +95,7 @@
 			android:layout_marginEnd="32dp"
 			android:layout_marginStart="32dp"
 			android:layout_marginTop="4dp"
-			android:text="Send invitation"
+			android:text="@string/send_invitation"
 			/>
 		
 		<Button
@@ -106,7 +106,7 @@
 			android:layout_marginEnd="32dp"
 			android:layout_marginStart="32dp"
 			android:layout_marginTop="4dp"
-			android:text="My Guests"
+			android:text="@string/my_visitors"
 			/>
 		
 		<Button
@@ -117,7 +117,7 @@
 			android:layout_marginEnd="32dp"
 			android:layout_marginStart="32dp"
 			android:layout_marginTop="4dp"
-			android:text="My invitations"
+			android:text="@string/my_invitations"
 			/>
 		
 		<TextView
@@ -132,14 +132,14 @@
 			/>
 		
 		<Button
-			android:id="@+id/clear"
+			android:id="@+id/logout"
 			android:layout_width="match_parent"
 			android:layout_height="wrap_content"
 			android:layout_marginBottom="4dp"
 			android:layout_marginEnd="32dp"
 			android:layout_marginStart="32dp"
 			android:layout_marginTop="4dp"
-			android:text="Clear data"
+			android:text="@string/logout"
 			/>
 	
 	</LinearLayout>

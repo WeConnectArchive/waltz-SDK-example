@@ -25,15 +25,15 @@ dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
 
     // Waltz
-    implementation 'com.waltzapp.transaction:waltz-sdk:2.7.0'
+    implementation 'com.waltzapp.transaction:waltz-sdk:2.8.0'
 
     // Android
     implementation 'com.android.support:appcompat-v7:28.0.0'
     implementation 'com.android.support:design:28.0.0'
 
     // Firebase
-    implementation 'com.google.firebase:firebase-core:16.0.8'
-    implementation 'com.google.firebase:firebase-messaging:17.6.0'
+    implementation 'com.google.firebase:firebase-core:16.0.9'
+    implementation 'com.google.firebase:firebase-messaging:18.0.0'
 }
 
 // ADD THIS AT THE BOTTOM
