@@ -34,7 +34,9 @@ public class MyApplication extends Application {
                 .setLicenseKey(toString(R.string.waltz_app_key))
                 .init();
 
-        FirebaseInstanceId.getInstance().getInstanceId()
+        FirebaseInstanceId
+                .getInstance()
+                .getInstanceId()
                 .addOnCompleteListener(new OnCompleteListener<InstanceIdResult>() {
                     @Override
                     public void onComplete(@NonNull Task<InstanceIdResult> task) {
