@@ -54,6 +54,12 @@ To request the Login flow, call the following function:
 The result will be sent into the following callback (WltzSDKMgrDelegate):
 
             func didFinishWaltzLogin(_ errorCode: SDKResponseCodes)
+            
+## Logout the user
+
+In order to leave the SDK in the same state, make sure to call the following function when the user is logged out of your application:
+
+        WaltzSDKMgr.sharedManager.logOut()
 
 ## Starting a transaction
 
