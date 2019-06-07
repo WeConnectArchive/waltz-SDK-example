@@ -1,5 +1,5 @@
 /*
- * Copyright 2017 Google
+ * Copyright 2019 Google
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,20 +14,32 @@
  * limitations under the License.
  */
 
-#import <Foundation/Foundation.h>
+#import <FirebaseInstanceID/FIRInstanceID.h>
 
+NS_ASSUME_NONNULL_BEGIN
+
+@class FIRInstanceIDCheckinPreferences;
 /**
- * Register the device with Checkin Service and get back the `authID`, `secret token` etc. for the
- * client. Checkin results are cached and periodically refreshed to
- * prevent them from being stale. Each client needs to register with checkin before registering
- * with FIRMessaging.
+ * Private API used by other Firebase SDKs.
  */
-@interface FIRMessagingCheckinService : NSObject
+@interface FIRInstanceID ()
 
 @property(nonatomic, readonly, strong) NSString *deviceAuthID;
 @property(nonatomic, readonly, strong) NSString *secretToken;
 @property(nonatomic, readonly, strong) NSString *versionInfo;
-@property(nonatomic, readonly, assign) BOOL hasValidCheckinInfo;
+
+/**
+ *  Private initializer.
+ */
+- (instancetype)initPrivately;
+
+/**
+ *  Returns a Firebase Messaging scoped token for the firebase app.
+ *
+ *  @return Returns the stored token if the device has registered with Firebase Messaging, otherwise
+ *          returns nil.
+ */
+- (nullable NSString *)token;
 
 /**
  *  Verify if valid checkin preferences have been loaded in memory.
@@ -43,11 +55,13 @@
  *  This should be used as a last gasp effort to retreive any cached checkin preferences before
  *  hitting the FIRMessaging backend to retrieve new preferences.
  *
- *  Note this is only required because InstanceID and FIRMessaging both require checkin preferences which
- *  need to be synced with each other.
+ *  Note this is only required because InstanceID and FIRMessaging both require checkin preferences
+ * which need to be synced with each other.
  *
  *  @return YES if successfully loaded cached checkin preferences into memory else NO.
  */
-- (BOOL)tryToLoadPrefetchedCheckinPreferences;
+- (BOOL)tryToLoadValidCheckinInfo;
 
 @end
+
+NS_ASSUME_NONNULL_END

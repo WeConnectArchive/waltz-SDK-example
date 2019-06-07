@@ -49,6 +49,10 @@ class ViewController: UIViewController, WltzSDKMgrDelegate {
         WaltzSDKMgr.sharedManager.logIn()
     }
     
+    @IBAction func Logout(_ sender: UIButton) {
+        WaltzSDKMgr.sharedManager.logOut()
+    }
+    
     @IBAction func startTransaction(_ sender: UIButton) {
         /*
          The SDK needs a valid key to start the transaction.
@@ -105,6 +109,10 @@ class ViewController: UIViewController, WltzSDKMgrDelegate {
         }
         
         print("The Login quit with error code \(errorCode)")
+    }
+    
+    func didFinishWaltzLogout(_ errorCode: SDKResponseCodes) {
+        print("The Logout quit with error code \(errorCode)")
     }
     
     func didFinishWaltzTransactionWithErrorCode(_ errorCode: SDKResponseCodes) {
