@@ -16,13 +16,3 @@ target 'ThirdParty' do
   pod 'Firebase/Core', :inhibit_warnings => true
   pod 'Firebase/Messaging', :inhibit_warnings => true
 end
-
-post_install do |installer|
-    installer.pods_project.targets.each do |target|
-        if ['Freddy'].include? target.name
-            target.build_configurations.each do |config|
-                config.build_settings['SWIFT_VERSION'] = '4.2'
-            end
-        end
-    end
-end

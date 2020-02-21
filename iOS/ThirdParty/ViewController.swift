@@ -134,7 +134,7 @@ class ViewController: UIViewController, WltzSDKMgrDelegate {
                 }
             }
             
-            responseTV.text = try! newGuests.toJSON().serializeString()
+            responseTV.text = newGuests.toJSON().rawString()
         }
     }
     
@@ -149,7 +149,7 @@ class ViewController: UIViewController, WltzSDKMgrDelegate {
                 }
             }
             
-            responseTV.text = try! newInvitations.toJSON().serializeString()
+            responseTV.text = newInvitations.toJSON().rawString()
         }
     }
     
